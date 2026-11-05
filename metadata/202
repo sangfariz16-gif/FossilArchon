@@ -1,0 +1,23 @@
+{
+  "name": "The Omnipotent Fossil Archon #202",
+  "description": "Terrible Claw \u2014 Base form, edition 2 of 20. The Omnipotent Fossil Archon \u2014 501 tokens, 12 lineages, Base & Evolved. Every mint is random; the reveal shows what you got.",
+  "image": "https://archon-gilt.vercel.app/assets/base-terrible-claw.jpg",
+  "attributes": [
+    {
+      "trait_type": "Lineage",
+      "value": "Terrible Claw"
+    },
+    {
+      "trait_type": "Form",
+      "value": "Base"
+    },
+    {
+      "trait_type": "Edition",
+      "value": 2
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Common"
+    }
+  ]
+}

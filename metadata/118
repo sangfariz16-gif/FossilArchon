@@ -1,0 +1,23 @@
+{
+  "name": "The Omnipotent Fossil Archon #118",
+  "description": "Long-Neck \u2014 Base form, edition 18 of 20. The Omnipotent Fossil Archon \u2014 501 tokens, 12 lineages, Base & Evolved. Every mint is random; the reveal shows what you got.",
+  "image": "https://archon-gilt.vercel.app/assets/base-long-neck.jpg",
+  "attributes": [
+    {
+      "trait_type": "Lineage",
+      "value": "Long-Neck"
+    },
+    {
+      "trait_type": "Form",
+      "value": "Base"
+    },
+    {
+      "trait_type": "Edition",
+      "value": 18
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Common"
+    }
+  ]
+}

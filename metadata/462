@@ -1,0 +1,19 @@
+{
+  "name": "The Omnipotent Fossil Archon #462",
+  "description": "Prime Avian \u2014 Evolved form, edition 2 of 20. The Omnipotent Fossil Archon \u2014 501 tokens, 12 lineages, Base & Evolved. Every mint is random; the reveal shows what you got.",
+  "image": "https://archon-gilt.vercel.app/assets/evolved-prime-avian.jpg",
+  "attributes": [
+    {
+      "trait_type": "Lineage",
+      "value": "Prime Avian"
+    },
+    {
+      "trait_type": "Form",
+      "value": "Evolved"
+    },
+    {
+      "trait_type": "Edition",
+      "value": 2
+    }
+  ]
+}
