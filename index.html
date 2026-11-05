@@ -1,515 +1,342 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Omnipotent Fossil Archon — Ultra Rare</title>
 <meta name="description" content="The Omnipotent Fossil Archon. 501 tokens, 12 lineages in Base and Evolved forms, plus the Archon and a one-of-one Genesis. First 33 mints free (1 per wallet), then 0.0003 BNB. BNB Chain.">
 <meta property="og:title" content="The Omnipotent Fossil Archon — Ultra Rare">
 <meta property="og:description" content="501 tokens. 12 lineages, Base and Evolved, plus the Archon and a one-of-one Genesis. First 33 free (1 per wallet), then 0.0003 BNB. BNB Chain.">
-<meta property="og:type" content="website">
 <meta property="og:image" content="https://archon-gilt.vercel.app/assets/hero.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://archon-gilt.vercel.app/assets/hero.jpg">
 <style>
-:root{--ink:#0b1026;--ink2:#101736;--panel:#141b3d;--gold:#c9a227;--gold2:#e8c85a;--bone:#ede6d6;--muted:#9aa3c7;--cyan:#57c8e8;--line:#2a3363}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--ink);color:var(--bone);font-family:Georgia,'Times New Roman',serif;overflow-x:hidden;padding-bottom:78px}
-a{color:var(--gold2)}
-img{display:block;max-width:100%}
-.wrap{max-width:1060px;margin:0 auto;padding:0 18px}
-.hero{position:relative;min-height:560px;min-height:100svh;display:flex;align-items:flex-end;background:#0b1026 url(assets/hero.jpg) center 18%/cover no-repeat}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,16,38,.15) 0%,rgba(11,16,38,.55) 55%,var(--ink) 96%)}
-.hero .inner{position:relative;z-index:2;padding:34px 18px 40px;width:100%;max-width:1060px;margin:0 auto}
-.badge{display:inline-block;font-family:system-ui,sans-serif;font-size:12px;letter-spacing:.22em;color:#0b1026;background:linear-gradient(90deg,var(--gold2),var(--gold));padding:6px 12px;border-radius:999px;font-weight:700}
-h1{font-size:clamp(40px,12vw,76px);line-height:1.02;margin:16px 0 10px;text-shadow:0 3px 24px rgba(0,0,0,.6);text-wrap:balance}
-h1 em{font-style:normal;color:var(--gold2)}
-.tag{font-size:clamp(17px,4.6vw,21px);line-height:1.5;color:#dfe3f5;max-width:560px;margin:0 0 20px;font-style:italic}
-.cta-row{display:flex;gap:10px;flex-wrap:wrap}
-.btn{display:inline-block;font-family:system-ui,sans-serif;font-weight:700;text-decoration:none;text-align:center;border-radius:10px;padding:13px 20px;font-size:15px;border:1px solid transparent;cursor:pointer}
-.btn-gold{background:linear-gradient(180deg,var(--gold2),var(--gold));color:#0b1026}
-.btn-ghost{background:rgba(11,16,38,.55);color:var(--bone);border-color:var(--gold)}
-.stats-strip{display:flex;gap:6px;flex-wrap:wrap;margin-top:22px}
-.stat{background:rgba(11,16,38,.72);border:1px solid var(--line);border-radius:10px;padding:8px 12px;font-family:system-ui,sans-serif}
-.stat b{display:block;font-size:16px;color:var(--gold2)}
-.stat span{font-size:11px;color:var(--muted)}
-section{padding:52px 0 8px}
-h2{font-size:clamp(26px,7vw,38px);margin:0 0 6px;text-wrap:balance}
-h2 .n{color:var(--gold2)}
-.sub{color:var(--muted);font-family:system-ui,sans-serif;font-size:15px;line-height:1.6;margin:0 0 22px;max-width:640px}
-.rec{display:inline-block;font-family:system-ui,sans-serif;font-size:11px;letter-spacing:.14em;background:linear-gradient(90deg,var(--gold2),var(--gold));color:#0b1026;font-weight:800;padding:3px 9px;border-radius:999px;margin-bottom:8px}
-.panel.paid-first{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold)}
-.mystery{font-family:system-ui,sans-serif;font-size:14px;line-height:1.6;border:1px dashed var(--gold);border-radius:10px;padding:12px 14px;margin:0 0 18px;color:#ffe9a8}
+:root{--bg:#0b1026;--panel:#141b3d;--panel2:#101736;--line:#2a3363;--txt:#ede6d6;--mut:#9aa3c7;--acc:#c9a227;--gold2:#e8c85a;--cyan:#57c8e8;--green:#7ED491;--red:#E5484D}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--txt);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.55;-webkit-text-size-adjust:100%;overflow-x:hidden}
+a{color:var(--gold2);text-decoration:none}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:Georgia,'Times New Roman',serif}
+header{position:sticky;top:0;z-index:20;background:rgba(11,16,38,.93);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.hwrap{max-width:960px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;gap:12px}
+.logo{font-weight:800;letter-spacing:.12em;font-size:15px;color:var(--txt);font-family:system-ui,sans-serif}
+.logo span{color:var(--gold2)}
+.hwrap nav{margin-left:auto;display:flex;gap:14px;align-items:center}
+.hwrap nav a{color:var(--mut);font-size:13px}
+.lang{display:flex;gap:6px}
+.lang button{border:1px solid var(--line);background:transparent;color:var(--mut);border-radius:999px;padding:5px 10px;font-weight:700;cursor:pointer;font-size:12px}
+.lang button.on{background:var(--acc);color:#0b1026;border-color:var(--acc)}
+.btn{display:inline-block;background:linear-gradient(180deg,var(--gold2),var(--acc));color:#0b1026;font-weight:700;border:0;border-radius:10px;padding:10px 18px;font-size:15px;cursor:pointer}
+.btn.small{padding:8px 14px;font-size:13px}
+.btn:disabled{background:#3A3A3E;color:#9aa3c7;cursor:not-allowed}
+.btn.ghost{background:transparent;border:1px solid var(--acc);color:var(--gold2)}
+main{max-width:960px;margin:0 auto;padding:0 16px 40px}
+.hero{margin:18px 0 8px;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--panel)}
+.hero img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center 20%}
+.hero-txt{padding:20px}
+h1{font-size:30px;line-height:1.15}
+.tag{color:var(--gold2);font-weight:700;margin-top:8px;font-style:italic;font-family:Georgia,serif}
+.lede{color:var(--mut);margin-top:10px;max-width:60ch}
+.pillrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.pill{border:1px solid var(--line);border-radius:999px;padding:5px 11px;font-size:12px;color:var(--mut)}
+.pill b{color:var(--txt)}
+section{margin-top:28px}
+h2{font-size:22px;margin-bottom:8px}
+h3{font-size:17px;margin-bottom:6px}
+.sub{color:var(--mut);margin-bottom:12px;max-width:66ch}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.stat{text-align:center;padding:14px 6px}
+.stat .n{font-size:24px;font-weight:800;color:#fff}
+.stat .l{font-size:12px;color:var(--mut);margin-top:2px}
+.flow{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;margin:14px 0}
+.flow-box{border:1px solid var(--acc);border-radius:12px;padding:14px 18px;text-align:center;background:var(--panel2);min-width:120px}
+.flow-box .big{font-size:22px;font-weight:800}
+.flow-box.now{border-color:var(--acc);box-shadow:0 0 0 1px var(--acc)}
+.arrow{font-size:24px;color:var(--acc);font-weight:800}
+.tier{border-top:4px solid var(--acc)}
+.tier.t2{border-top-color:#7ea2ff}
+.tier.t3{border-top-color:#e8c85a}
+.tier.t4{border-top-color:#ffb03a}
+.tier .thumb{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:10px}
+.tier .thumb img{width:100%;aspect-ratio:2/3;object-fit:cover;border-radius:8px}
+.stepnum{width:30px;height:30px;border-radius:50%;background:var(--acc);color:#0b1026;display:inline-flex;align-items:center;justify-content:center;font-weight:800;margin-bottom:8px}
+.qty{display:flex;align-items:center;gap:12px;margin:14px 0}
+.qty button{width:44px;height:44px;font-size:22px;border-radius:10px;border:1px solid var(--line);background:var(--panel2);color:#fff;cursor:pointer}
+.qty .qv{font-size:22px;font-weight:800;min-width:36px;text-align:center}
+.note{font-size:13px;color:var(--mut)}
+.note b{color:var(--txt)}
+.out{font-weight:700;color:var(--green)}
+.checkrow{display:flex;gap:10px;margin-top:12px}
+.checkrow input{flex:1;padding:12px;border:1px solid var(--line);border-radius:10px;background:var(--panel2);color:#fff;font-size:16px;min-width:0}
+details{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:700}
+details p{color:var(--mut);margin-top:8px}
+details pre{white-space:pre-wrap;word-break:break-word;background:#101736;border:1px solid var(--line);border-radius:10px;padding:12px;font-size:12px;line-height:1.5;color:var(--mut);margin-top:10px}
+footer{border-top:1px solid var(--line);margin-top:36px;padding:20px 0;color:var(--mut);font-size:13px;text-align:center}
+.mystery{font-size:14px;line-height:1.6;border:1px dashed var(--acc);border-radius:10px;padding:12px 14px;margin:0 0 18px;color:#ffe9a8}
 .mystery b{color:var(--gold2);letter-spacing:.12em}
-.dock{position:fixed;left:0;right:0;bottom:0;z-index:50;background:rgba(11,16,38,.95);border-top:1px solid var(--gold);padding:10px 14px calc(10px + env(safe-area-inset-bottom));display:flex;gap:10px;align-items:center;justify-content:space-between}
-.dock .d-price{font-family:system-ui,sans-serif}
-.dock .d-price b{display:block;font-size:17px;color:var(--gold2)}
-.dock .d-price span{font-size:12px;color:var(--muted)}
-.genesis{display:grid;gap:18px;align-items:center}
-@media(min-width:760px){.genesis{grid-template-columns:340px 1fr}}
-.genesis img{border-radius:14px;border:1px solid var(--gold);width:100%}
-.tiers{border:1px solid var(--line);border-radius:14px;overflow:hidden}
-.tier{display:grid;grid-template-columns:110px 1fr;gap:12px;padding:14px 16px;border-top:1px solid var(--line);align-items:start}
-.tier:first-child{border-top:0}
-.tier b{font-family:system-ui,sans-serif;letter-spacing:.1em;font-size:13px}
-.tier p{margin:0;font-family:system-ui,sans-serif;font-size:14px;line-height:1.6;color:#dfe3f5}
-.t-common b{color:#cfd6e4}.t-uncommon b{color:#7ddb8a}.t-rare b{color:#6fb2fd}.t-epic b{color:#c99aff}.t-legend b{color:#ffb03a}
-.claim-box{border:1px solid var(--gold);border-radius:16px;background:linear-gradient(180deg,#131a3d,#0e1330);padding:22px 18px}
-.steps{margin:0 0 18px;padding:0;list-style:none;font-family:system-ui,sans-serif}
+.steps{list-style:none;margin:0 0 18px;padding:0}
 .steps li{display:flex;gap:12px;padding:11px 0;border-top:1px solid var(--line);font-size:15px;line-height:1.55}
 .steps li:first-child{border-top:0}
-.steps .no{flex:0 0 28px;height:28px;border-radius:50%;background:var(--gold);color:#0b1026;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:14px}
-.steps small{display:block;color:var(--muted);font-size:13px;margin-top:2px}
-.mint-panels{display:grid;gap:12px}
-@media(min-width:760px){.mint-panels{grid-template-columns:1fr 1fr}}
-.panel{border:1px solid var(--line);border-radius:14px;padding:18px;background:var(--panel)}
-.panel.free{border-color:var(--cyan)}
-.panel h3{margin:0 0 4px;font-size:20px}
-.panel p{font-family:system-ui,sans-serif;font-size:14px;line-height:1.6;color:#dfe3f5;margin:0 0 14px}
-.panel .price{font-size:26px;color:var(--gold2);font-weight:700}
-.qty{display:flex;align-items:center;gap:10px;margin:0 0 12px;font-family:system-ui,sans-serif}
-.qty button{width:38px;height:38px;border-radius:9px;border:1px solid var(--line);background:#0b1026;color:var(--bone);font-size:19px;cursor:pointer}
-.qty b{font-size:18px;min-width:28px;text-align:center}
-.total{font-family:system-ui,sans-serif;font-size:14px;color:var(--muted);margin:0 0 12px}
-.total b{color:var(--bone)}
-.note{font-family:system-ui,sans-serif;font-size:13px;color:var(--muted);line-height:1.6;margin:14px 0 0}
-.live{font-family:system-ui,sans-serif;font-size:14px;margin:16px 0 0}
-.live b{color:var(--gold2)}
-.agent{background:#0e1330;border:1px dashed var(--line);border-radius:12px;padding:16px;font-family:system-ui,sans-serif;font-size:14px;line-height:1.65;color:#dfe3f5}
-.agent code{background:#1d2a5e;padding:2px 6px;border-radius:6px;font-size:13px;word-break:break-all}
-.contract-card,.support-card{border:1px solid var(--line);border-radius:14px;padding:18px;background:var(--panel);font-family:system-ui,sans-serif}
-.contract-card code{word-break:break-all;color:var(--gold2)}
-.share-box{border:1px solid var(--gold);border-radius:14px;padding:16px 18px;background:var(--panel);margin:0 auto 16px;max-width:640px}
-.share-box p{white-space:pre-line;font-family:system-ui,sans-serif;font-size:15px;line-height:1.6;margin:0}
-.share-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
-.ftag{display:inline-block;font-family:system-ui,sans-serif;font-size:11px;letter-spacing:.14em;padding:4px 10px;border-radius:999px}
-.ftag.base{background:#1d2a5e;color:#bcd0ff}
-.ftag.evo{background:#4a3200;color:#ffd977}
-.stage{position:relative;height:372px;max-width:1060px;margin:0 auto;background:#0d1230;border:1px solid var(--line);border-radius:16px;overflow:hidden}
-@media(min-width:760px){.stage{height:408px}}
-.stage-card{position:absolute;left:50%;top:14px;width:min(230px,58vw);border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--panel);box-shadow:0 18px 40px rgba(0,0,0,.55);cursor:pointer;transition:transform .5s ease,filter .5s ease,border-color .5s ease}
-.stage-card img{width:100%;aspect-ratio:2/3;object-fit:cover}
-.stage-card .sc-cap{position:absolute;left:0;right:0;bottom:0;padding:30px 12px 11px;background:linear-gradient(180deg,transparent,rgba(0,0,0,.88))}
-.stage-card .sc-cap b{display:block;font-size:17px}
-.stage-card .sc-cap span{font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:11px;letter-spacing:.1em;color:#cfd6e4}
-.stage-card .sc-pill{position:absolute;top:10px;right:10px;background:rgba(11,16,38,.85);border:1px solid var(--line);border-radius:999px;padding:3px 9px;font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:11px;color:var(--bone)}
-.stage-card.center{border-color:var(--gold);z-index:3}
-.stage-card.near{z-index:2}
-.stage-card.far{z-index:1}
-.stage-arrow{position:absolute;top:44%;z-index:6;width:46px;height:46px;border-radius:50%;border:1px solid var(--gold);background:rgba(11,16,38,.88);color:var(--gold2);font-size:21px;cursor:pointer}
-.stage-arrow.left{left:10px}.stage-arrow.right{right:10px}
-.stage-meta{text-align:center;margin-top:16px}
-.stage-meta .inv{font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:12px;letter-spacing:.16em;color:var(--muted)}
-.stage-meta h3{font-size:clamp(24px,6.5vw,34px);margin:8px 0 10px}
-.stage-nav{display:flex;gap:10px;justify-content:center;margin-top:16px}
-.stage-nav button{border-radius:999px;padding:11px 22px;font-size:14px;font-weight:700;border:1px solid var(--gold);background:#0b1026;color:var(--gold2);cursor:pointer;font-family:system-ui,sans-serif}
-.wall-title{margin-top:46px}
-.wall{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-@media(min-width:760px){.wall{grid-template-columns:repeat(4,1fr);gap:20px}}
-.tile{border:1px solid var(--line);border-radius:12px;background:var(--panel);padding:10px}
-.tile .mat img{width:100%;aspect-ratio:2/3;object-fit:cover;border-radius:8px}
-.tile .t-label{display:flex;justify-content:space-between;align-items:center;font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:11px;letter-spacing:.12em;color:var(--muted);margin:10px 2px 4px}
-.tile .dot{width:9px;height:9px;border-radius:50%;display:inline-block}
-.tile h4{margin:0 2px 2px;font-size:19px}
-.tile .t-ed{font-family:system-ui,sans-serif;font-size:12px;color:var(--muted);margin:0 2px 10px}
-.tile .view{width:100%;background:#0b1026;border:1px solid var(--line);color:var(--bone);border-radius:999px;padding:9px 12px;font-family:system-ui,sans-serif;font-size:13px;font-weight:700;letter-spacing:.12em;cursor:pointer}
-.modal{position:fixed;inset:0;z-index:100;background:rgba(5,8,20,.85);display:none;align-items:center;justify-content:center;padding:18px}
-.modal.open{display:flex}
-.modal-box{background:var(--ink2);border:1px solid var(--line);border-radius:16px;max-width:860px;width:100%;max-height:90vh;overflow:auto;padding:20px 18px;position:relative}
-.modal-grid{display:grid;gap:18px}
-@media(min-width:760px){.modal-grid{grid-template-columns:320px 1fr}}
-.modal-box .m-img{width:100%;aspect-ratio:2/3;object-fit:cover;border-radius:12px;border:1px solid var(--line)}
-.modal-box .m-kicker{font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:12px;letter-spacing:.16em;color:var(--muted)}
-.modal-box h3{font-size:clamp(26px,7vw,36px);margin:8px 0 14px}
-.trait{display:flex;justify-content:space-between;gap:14px;padding:11px 0;border-top:1px solid var(--line);font-family:system-ui,sans-serif;font-size:14px}
-.trait span:first-child{color:var(--muted)}
-.modal-x{position:absolute;top:10px;right:14px;background:none;border:0;color:var(--bone);font-size:26px;cursor:pointer;line-height:1}
-.modal-nav{display:flex;gap:10px;margin-top:16px}
-.modal-nav button{flex:1;border-radius:10px;padding:12px;font-family:system-ui,sans-serif;font-size:14px;font-weight:700;cursor:pointer;border:1px solid var(--line);background:#0b1026;color:var(--bone)}
-.topbar{position:sticky;top:0;z-index:60;display:flex;align-items:center;justify-content:space-between;gap:10px;background:rgba(11,16,38,.94);border-bottom:1px solid var(--line);padding:9px 14px}
-.brand{font-size:14px;letter-spacing:.2em;font-weight:800;color:var(--bone);text-decoration:none;font-family:system-ui,sans-serif}
-.brand b{color:var(--gold2)}
-.top-right{display:flex;align-items:center;gap:8px}
-.lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
-.lang button{background:transparent;border:0;color:var(--muted);font-family:system-ui,sans-serif;font-size:12px;font-weight:700;padding:7px 10px;cursor:pointer}
-.lang button.active{background:var(--gold);color:#0b1026}
-.burger{width:40px;height:40px;border-radius:10px;border:1px solid var(--gold);background:#0b1026;color:var(--gold2);font-size:19px;cursor:pointer;line-height:1}
-.drawer{position:fixed;top:0;right:0;bottom:0;width:min(320px,84vw);background:var(--ink2);border-left:1px solid var(--gold);z-index:110;transform:translateX(105%);transition:transform .3s ease;padding:18px;display:flex;flex-direction:column;overflow-y:auto}
-.drawer.open{transform:none}
-.drawer h3{margin:4px 0 12px;font-size:22px}
-.drawer-x{position:absolute;top:10px;right:14px;background:none;border:0;color:var(--bone);font-size:26px;cursor:pointer;line-height:1}
-.drawer a.d-link{display:block;padding:13px 10px;border-top:1px solid var(--line);color:var(--bone);text-decoration:none;font-family:system-ui,sans-serif;font-size:16px}
-.drawer .d-lang{margin-top:20px}
-.drawer .d-lang p{font-family:system-ui,sans-serif;font-size:12px;letter-spacing:.14em;color:var(--muted);margin:0 0 8px;text-transform:uppercase}
-.drawer .d-cta{margin-top:auto;padding-top:18px}
-.scrim{position:fixed;inset:0;background:rgba(5,8,20,.6);z-index:105;display:none}
-.scrim.open{display:block}
-.faq details{border:1px solid var(--line);border-radius:12px;background:var(--panel);margin-bottom:10px;overflow:hidden}
-.faq summary{cursor:pointer;padding:15px 16px;font-family:system-ui,sans-serif;font-size:15px;font-weight:700;list-style:none}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";float:right;color:var(--gold2);font-size:18px;line-height:1}
-.faq details[open ] summary::after{content:"\2212"}
-.faq details p{margin:0;padding:0 16px 15px;font-family:system-ui,sans-serif;font-size:14px;line-height:1.65;color:#dfe3f5}
-footer{padding:44px 0 60px;color:var(--muted);font-family:system-ui,sans-serif;font-size:13px;line-height:1.7;text-align:center}
+.steps .no{flex:0 0 28px;height:28px;border-radius:50%;background:var(--acc);color:#0b1026;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:14px}
+.steps small{display:block;color:var(--mut);font-size:13px;margin-top:2px}
+.panel-free{border-color:var(--cyan)}
+.rec{display:inline-block;font-size:11px;letter-spacing:.14em;background:linear-gradient(90deg,var(--gold2),var(--acc));color:#0b1026;font-weight:800;padding:3px 9px;border-radius:999px;margin-bottom:8px}
+.price{font-size:26px;color:var(--gold2);font-weight:700}
+.total{font-size:14px;color:var(--mut);margin:0 0 12px}
+.total b{color:var(--txt)}
+.tier-row{display:grid;grid-template-columns:110px 1fr;gap:12px;padding:14px 16px;border-top:1px solid var(--line);align-items:start}
+.tier-row:first-child{border-top:0}
+.tier-row b{letter-spacing:.1em;font-size:13px}
+.tier-row p{margin:0;font-size:14px;line-height:1.6;color:#dfe3f5}
+.t-common b{color:#cfd6e4}.t-uncommon b{color:#7ddb8a}.t-rare b{color:#6fb2fd}.t-epic b{color:#c99aff}.t-legend b{color:#ffb03a}
+@media (max-width:640px){
+  h1{font-size:26px}
+  .grid4{grid-template-columns:repeat(2,1fr)}
+  .grid2,.grid3{grid-template-columns:1fr}
+  .hwrap nav a{display:none}
+  .hero img{aspect-ratio:4/5}
+}
 </style>
 </head>
 <body>
-<div class="topbar">
-  <a class="brand" href="#">FOSSIL <b>ARCHON</b></a>
-  <div class="top-right">
-    <div class="lang" role="group" aria-label="Language">
-      <button class="lang-btn" data-lang="en">EN</button>
-      <button class="lang-btn" data-lang="id">ID</button>
-      <button class="lang-btn" data-lang="ja">JA</button>
-    </div>
-    <button class="burger" id="burger" aria-label="Menu">&#9776;</button>
-  </div>
-</div>
-<div class="scrim" id="scrim"></div>
-<nav class="drawer" id="drawer" aria-label="Menu">
-  <button class="drawer-x" id="drawerClose" aria-label="Close">&times;</button>
-  <h3 data-i18n="menu.title">Menu</h3>
-  <a class="d-link" href="#claim" data-i18n="menu.mint">Mint</a>
-  <a class="d-link" href="#lineages" data-i18n="menu.collection">Collection</a>
-  <a class="d-link" href="#genesis" data-i18n="menu.genesis">Genesis</a>
-  <a class="d-link" href="#rarity" data-i18n="menu.rarity">Rarity</a>
-  <a class="d-link" href="#faq" data-i18n="menu.faq">FAQ</a>
-  <a class="d-link" href="#agent" data-i18n="menu.agent">Agent Mint</a>
-  <a class="d-link" href="#contract" data-i18n="menu.contract">Contract</a>
-  <a class="d-link" href="#share" data-i18n="menu.share">Share</a>
-  <div class="d-lang">
-    <p data-i18n="menu.language">Language</p>
-    <div class="lang">
-      <button class="lang-btn" data-lang="en">EN</button>
-      <button class="lang-btn" data-lang="id">ID</button>
-      <button class="lang-btn" data-lang="ja">JA</button>
-    </div>
-  </div>
-  <div class="d-cta"><a class="btn btn-gold" href="#claim" style="display:block" data-i18n="dock.buy">Buy Now</a></div>
-</nav>
-<header class="hero">
-  <div class="inner">
-    <span class="badge" data-i18n="badge">ULTRA RARE &bull; LIMITED EDITION</span>
-    <h1>THE OMNIPOTENT<br><em>FOSSIL ARCHON</em></h1>
-    <p class="tag" data-i18n="tag">&ldquo;The Ultimate Convergence of Ancient Power &mdash; Where All Lineages Unite into One Supreme Entity.&rdquo;</p>
-    <div class="cta-row">
-      <a class="btn btn-gold" href="#claim" data-i18n="cta.buy">Buy Now &mdash; 0.0003 BNB</a>
-      <a class="btn btn-ghost" href="#claim" data-i18n="cta.free">Claim Free (1/wallet)</a>
-    </div>
-    <div class="stats-strip">
-      <div class="stat"><b>501</b><span data-i18n="stat.supply">total supply</span></div>
-      <div class="stat"><b>12</b><span data-i18n="stat.lineages">lineages</span></div>
-      <div class="stat"><b>2</b><span data-i18n="stat.forms">forms each</span></div>
-      <div class="stat"><b>33</b><span data-i18n="stat.free">free mints</span></div>
-      <div class="stat"><b>0.0003 BNB</b><span data-i18n="stat.paid">paid mint</span></div>
-    </div>
+<header>
+  <div class="hwrap">
+    <div class="logo">FOSSIL <span>ARCHON</span></div>
+    <nav>
+      <a href="#mint" data-i18n="nav.mint">Mint</a>
+      <a href="#lineages" data-i18n="nav.lineages">Lineages</a>
+      <a href="#rarity" data-i18n="nav.rarity">Rarity</a>
+      <a href="#faq" data-i18n="nav.faq">FAQ</a>
+      <div class="lang"><button id="b-en" class="on" type="button" onclick="setLang('en')">EN</button><button id="b-id" type="button" onclick="setLang('id')">ID</button><button id="b-ja" type="button" onclick="setLang('ja')">日本語</button></div>
+      <a class="btn small" href="#mint" data-i18n="nav.buy">Buy Now</a>
+    </nav>
   </div>
 </header>
-
-<main class="wrap">
-<section id="claim">
-  <h2 data-i18n="claim.title">Claim <span class="n">Your Archon</span></h2>
-  <div class="claim-box">
-    <p class="sub" style="margin-bottom:6px" data-i18n="claim.sub">Paid mint is open now &mdash; buy instantly, no wallet limit. The free mint is open too: 1 per wallet, 33 total. The support steps below are requested, not a lock &mdash; claim now, support the launch after.</p>
-    <p class="mystery" data-i18n="mystery"><b>MYSTERY REVEAL</b> &mdash; Every mint is random. Each mint draws a random token from the remaining pool, so you will not know which lineage or rarity you get until it reveals. One of the 501 is a one-of-one.</p>
-    <ol class="steps">
-      <li><span class="no">1</span><div><span data-i18n="step1.t">Like the launch post</span><small data-i18n="step1.n">Opens with the official post &mdash; link appears once the post is live.</small></div></li>
-      <li><span class="no">2</span><div><span data-i18n="step2.t">Repost it</span><small data-i18n="step2.n">Share it with your timeline.</small></div></li>
-      <li><span class="no">3</span><div><span data-i18n="step3.t">Comment on the post</span><small data-i18n="step3.n">Say something &mdash; any comment counts.</small></div></li>
-      <li><span class="no">4</span><div><span data-i18n="step4.t">Quote it</span><small data-i18n="step4.n">Post it with your own words.</small></div></li>
-      <li><span class="no">5</span><div><span data-i18n="step5.t">Follow the official account</span><small data-i18n="step5.n">So you do not miss the next drop.</small></div></li>
-    </ol>
-    <div class="mint-panels">
-      <div class="panel paid-first">
-        <span class="rec" data-i18n="paid.rec">RECOMMENDED</span>
-        <h3 data-i18n="paid.title">Paid Mint</h3>
-        <p><span class="price">0.0003 BNB</span> &nbsp;<span data-i18n="paid.per">per token</span><br><span data-i18n="paid.desc">Always open &mdash; no per-wallet limit. Buy as many as you like while supply lasts. A small network gas fee applies on top.</span></p>
-        <div class="qty"><button id="qMinus" aria-label="less">&minus;</button><b id="qty">1</b><button id="qPlus" aria-label="more">+</button><span style="color:var(--muted);font-size:13px" data-i18n="paid.max">no limit per transaction</span></div>
-        <p class="total"><span data-i18n="paid.total">Total:</span> <b id="total">0.0003 BNB</b></p>
-        <button class="btn btn-gold" id="mintBtn" style="width:100%" data-i18n="dock.buy">Buy Now</button>
+<main>
+  <div class="hero">
+    <img src="assets/hero.jpg" alt="The Omnipotent Fossil Archon — white and gold armor over a night city">
+    <div class="hero-txt">
+      <h1 data-i18n="hero.h1">THE OMNIPOTENT FOSSIL ARCHON</h1>
+      <p class="tag" data-i18n="hero.tag">“The Ultimate Convergence of Ancient Power — Where All Lineages Unite into One Supreme Entity.”</p>
+      <p class="lede" data-i18n="hero.lede">501 tokens. 12 lineages in Base and Evolved forms, plus the Archon and a one-of-one Genesis. Every mint is random — you will not know which one you get until it reveals.</p>
+      <div class="pillrow">
+        <span class="pill"><b>501</b> <span data-i18n="pill.supply">tokens</span></span>
+        <span class="pill"><b>33</b> <span data-i18n="pill.free">free (1/wallet)</span></span>
+        <span class="pill"><b>0.0003 BNB</b> <span data-i18n="pill.paid">paid mint</span></span>
+        <span class="pill"><b data-i18n="pill.random">Random mint</b></span>
       </div>
-      <div class="panel free">
-        <h3 data-i18n="free.title">Free Mint</h3>
-        <p><span class="price">FREE</span> &nbsp;<span data-i18n="free.gas">network gas only</span><br><span data-i18n="free.desc">33 free mints, max 1 per wallet. The token is free &mdash; you only pay the small network gas fee (around $0.01 at current gas prices). Once the 33 are gone, minting continues at the paid price.</span></p>
-        <button class="btn btn-ghost" id="freeBtn" style="width:100%" data-i18n="free.btn">Claim Free (1)</button>
-        <p class="note"><span data-i18n="free.status">Free status:</span> <b id="freeState" data-i18n="free.state">—</b></p>
-      </div>
-    </div>
-    <p class="live"><span data-i18n="live.minted">Minted:</span> <b id="liveStats">&mdash;/501</b> &middot; <span data-i18n="live.free">Free left:</span> <b id="freeLeft">&mdash;</b> &middot; <span id="statNote" data-i18n="live.note">Live on BNB Smart Chain &mdash; numbers refresh every 30 seconds.</span></p>
-    <p class="note" data-i18n="claim.note">These support steps are requested, not verified on-chain: the contract cannot check X likes, reposts, comments, quotes or follows. Claiming free is open to every wallet until the 33 are gone.</p>
-    <p class="note" id="mintNote"></p>
-  </div>
-</section>
-
-<section id="lineages">
-  <h2 data-i18n="lin.title">The Twelve <span class="n">Lineages</span></h2>
-  <p class="sub" data-i18n="lin.sub">Twelve warriors, each in a Base and an Evolved form, plus the Archon and the Primordial Genesis &mdash; 26 portraits on the wall. Every mint pulls one at random. You only find out which one when it reveals.</p>
-  <div class="stage" id="stage">
-    <button class="stage-arrow left" id="stagePrev" aria-label="previous">&larr;</button>
-    <button class="stage-arrow right" id="stageNext" aria-label="next">&rarr;</button>
-  </div>
-  <div class="stage-meta">
-    <div class="inv" id="stageInv"></div>
-    <h3 id="stageName"></h3>
-    <span id="stagePill"></span>
-  </div>
-  <div class="stage-nav"><button id="shuffleBtn">Acak</button></div>
-  <h3 class="wall-title" data-i18n="wall.title">The Wall</h3>
-  <p class="sub" data-i18n="wall.sub">All 26 portraits hanging on the wall. Tap VIEW to look closer.</p>
-  <div class="wall" id="wall"></div>
-</section>
-
-<section id="genesis">
-  <h2 data-i18n="gen.title">The Genesis <span class="n">Card</span></h2>
-  <div class="genesis">
-    <img src="assets/genesis.jpg" alt="Primordial Genesis card" loading="lazy">
-    <div>
-      <p class="sub" style="margin-bottom:12px" data-i18n="gen.p1">Primordial Genesis. A winged Triceratops sovereign in a golden frame &mdash; the first spark of the convergence. There is only one of it, and it is somewhere in the mint pool.</p>
-      <p class="sub" data-i18n="gen.p2">The Archon is the figure above: white and gold armor over a night city. Every lineage leads to it.</p>
+      <p style="margin-top:14px"><a class="btn" href="#mint" data-i18n="hero.ctaBuy">Buy Now — 0.0003 BNB</a> <a class="btn ghost" href="#mint" data-i18n="hero.ctaFree">Claim Free (1/wallet)</a></p>
+      <p class="note" style="margin-top:10px" data-i18n="hero.note">Mint is live. Connect your wallet on BNB Chain — this page never asks for your keys.</p>
     </div>
   </div>
-</section>
 
-<section id="rarity">
-  <h2 data-i18n="rar.title">Rarity <span class="n">Tiers</span></h2>
-  <p class="sub" data-i18n="rar.sub">From the Fossilize Metaverse tier list. A tier describes the artwork &mdash; nothing else.</p>
-  <img src="assets/rarity-tiers.jpg" alt="Rarity tier list — The Fossilize Metaverse" loading="lazy" style="width:100%;max-width:560px;margin:0 auto 20px;border-radius:14px;border:1px solid var(--line)">
-  <div class="tiers">
-    <div class="tier t-common"><b>COMMON</b><p data-i18n="tier.common">Base forms &mdash; Long-Neck and the twelve warriors in their base armor.</p></div>
-    <div class="tier t-uncommon"><b>UNCOMMON</b><p data-i18n="tier.uncommon">Advanced forms &mdash; Crested Caller, Saber-Tooth.</p></div>
-    <div class="tier t-rare"><b>RARE</b><p data-i18n="tier.rare">Elite forms &mdash; Palaeo-Sky Glider.</p></div>
-    <div class="tier t-epic"><b>EPIC</b><p data-i18n="tier.epic">Ascended Evolved &mdash; Spinosaurus / Sail-Back, Woolly Titan.</p></div>
-    <div class="tier t-legend"><b>LEGENDARY</b><p data-i18n="tier.legend">Mythic Evolution &mdash; 001 The Tyrant Evolved and 002 Triceratops Evolved.</p></div>
-  </div>
-</section>
+  <section aria-label="Live stats">
+    <div class="card grid4">
+      <div class="stat"><div class="n">501</div><div class="l" data-i18n="stat.supply">Total supply</div></div>
+      <div class="stat"><div class="n">33</div><div class="l" data-i18n="stat.free">Free mints</div></div>
+      <div class="stat"><div class="n">0.0003</div><div class="l" data-i18n="stat.paid">BNB per token</div></div>
+      <div class="stat"><div class="n" id="statMinted">…</div><div class="l" data-i18n="stat.minted">Minted (live)</div></div>
+    </div>
+    <p class="note" style="margin-top:8px" data-i18n="stat.note">Live from the contract — updates every 30 seconds. No wallet needed to view.</p>
+  </section>
 
-<section id="faq" class="faq">
-  <h2 data-i18n="faq.title">FAQ</h2>
-  <p class="sub" data-i18n="faq.sub">The short answers.</p>
-  <details><summary data-i18n="faq.q1">How does the mint work?</summary><p data-i18n="faq.a1">Every mint draws one token at random from the pool of 501. You do not choose the artwork — the contract picks it, and the reveal shows what you got. First come, first served.</p></details>
-  <details><summary data-i18n="faq.q2">What is the one-of-one?</summary><p data-i18n="faq.a2">The Primordial Genesis. There is only one in the pool of 501, so only one wallet in the world can ever hold it.</p></details>
-  <details><summary data-i18n="faq.q3">How do I get the free mint?</summary><p data-i18n="faq.a3">33 free mints exist, one per wallet — and claiming is open now, no gate. The five support steps on the launch post are requested as a thank-you, not checked on-chain: the contract cannot verify X actions.</p></details>
-  <details><summary data-i18n="faq.q4">What does a paid mint cost?</summary><p data-i18n="faq.a4">0.0003 BNB per token, plus network gas. There is no per-wallet limit on paid mints, and there is no limit per transaction.</p></details>
-  <details><summary data-i18n="faq.q5">Which wallet can I use?</summary><p data-i18n="faq.a5">Any wallet on BNB Smart Chain — MetaMask, Binance Wallet, or an AI agent wallet like the Binance Agentic Wallet. Make sure you are on BNB Smart Chain (chain 56).</p></details>
-  <details><summary data-i18n="faq.q6">When does minting open?</summary><p data-i18n="faq.a6">Minting is open now &mdash; the contract is live on BNB Smart Chain.</p></details>
-  <details><summary data-i18n="faq.q7">Is this an investment?</summary><p data-i18n="faq.a7">No. It is a collectible. Nothing here promises a return.</p></details>
-</section>
+  <section id="how">
+    <h2 data-i18n="how.h">Mint your Archon in three steps.</h2>
+    <p class="sub" data-i18n="how.sub">No forms, no allowlist, no voucher. Just your wallet and BNB — and a little luck.</p>
+    <div class="grid3">
+      <div class="card"><div class="stepnum">1</div><h3 data-i18n="how.s1t">Open in a wallet browser</h3><p class="note" data-i18n="how.s1p">Open this page in MetaMask or Binance Wallet, on BNB Smart Chain (chain 56).</p></div>
+      <div class="card"><div class="stepnum">2</div><h3 data-i18n="how.s2t">Choose free or paid</h3><p class="note" data-i18n="how.s2p">Claim your 1 free mint if you have not yet — or buy as many as you like at 0.0003 BNB each.</p></div>
+      <div class="card"><div class="stepnum">3</div><h3 data-i18n="how.s3t">Confirm and reveal</h3><p class="note" data-i18n="how.s3p">Confirm in your wallet. The contract draws one token at random — the reveal shows what you got.</p></div>
+    </div>
+  </section>
 
-<section id="agent">
-  <h2 data-i18n="agent.title">Agent <span class="n">Mint</span></h2>
-  <p class="sub" data-i18n="agent.sub">Mint with an AI agent wallet (for example the Binance Agentic Wallet). Paste this prompt to your agent:</p>
-  <div class="agent">Mint <code>1</code> NFT from The Omnipotent Fossil Archon on BNB Smart Chain (0x04b9F1Ecf9c5417f6327c3AD3Cc07559050cDc8C). Use the free mint if my wallet has not claimed it yet and free mints remain; otherwise mint paid at 0.0003 BNB per token. Minting is random &mdash; the token is drawn from the remaining pool. Confirm the exact cost before sending.</div>
-</section>
+  <section id="mint">
+    <h2 data-i18n="mint.h">Claim your Archon</h2>
+    <div class="card">
+      <p class="sub" data-i18n="mint.sub">Paid mint is open now — buy instantly, no wallet limit. The free mint is open too: 1 per wallet, 33 total. The support steps below are requested, not a lock — claim now, support the launch after.</p>
+      <p class="mystery" data-i18n="mint.mystery"><b>MYSTERY REVEAL</b> — Every mint is random. Each mint draws a random token from the remaining pool, so you will not know which lineage or rarity you get until it reveals. One of the 501 is a one-of-one.</p>
+      <ol class="steps">
+        <li><span class="no">1</span><div><span data-i18n="step1.t">Like the launch post</span><small data-i18n="step1.n">Opens with the official post — link appears once the post is live.</small></div></li>
+        <li><span class="no">2</span><div><span data-i18n="step2.t">Repost it</span><small data-i18n="step2.n">Share it with your timeline.</small></div></li>
+        <li><span class="no">3</span><div><span data-i18n="step3.t">Comment on the post</span><small data-i18n="step3.n">Say something — any comment counts.</small></div></li>
+        <li><span class="no">4</span><div><span data-i18n="step4.t">Quote it</span><small data-i18n="step4.n">Post it with your own words.</small></div></li>
+        <li><span class="no">5</span><div><span data-i18n="step5.t">Follow the official account</span><small data-i18n="step5.n">So you do not miss the next drop.</small></div></li>
+      </ol>
+      <div class="grid2">
+        <div class="card" style="border-color:var(--acc)">
+          <span class="rec" data-i18n="paid.rec">RECOMMENDED</span>
+          <h3 data-i18n="paid.title">Paid Mint</h3>
+          <p><span class="price">0.0003 BNB</span> &nbsp;<span data-i18n="paid.per">per token</span><br><span class="note" data-i18n="paid.desc">Always open — no per-wallet limit. Buy as many as you like while supply lasts. A small network gas fee applies on top.</span></p>
+          <div class="qty"><button type="button" id="qMinus" aria-label="Fewer">−</button><span class="qv" id="qVal">1</span><button type="button" id="qPlus" aria-label="More">+</button><span class="note" data-i18n="paid.max">no limit per transaction</span></div>
+          <p class="total"><span data-i18n="paid.total">Total:</span> <b id="total">0.0003 BNB</b></p>
+          <button class="btn" type="button" id="mintBtn" style="width:100%" data-i18n="paid.btn">Buy Now</button>
+        </div>
+        <div class="card panel-free">
+          <h3 data-i18n="free.title">Free Mint</h3>
+          <p><span class="price">FREE</span> &nbsp;<span data-i18n="free.gas">network gas only</span><br><span class="note" data-i18n="free.desc">33 free mints, max 1 per wallet. The token is free — you only pay the small network gas fee (around $0.01 at current gas prices). Once the 33 are gone, minting continues at the paid price.</span></p>
+          <p style="margin-top:12px"><button class="btn ghost" type="button" id="freeBtn" style="width:100%" data-i18n="free.btn">Claim Free (1)</button></p>
+          <p class="note" style="margin-top:10px"><span data-i18n="free.status">Free status:</span> <b id="freeState">—</b></p>
+        </div>
+      </div>
+      <p class="note" style="margin-top:14px" id="mintedLine" data-i18n="mint.line">Minted: Loading…</p>
+      <p class="note" style="margin-top:6px" id="mintNote" data-i18n="mint.note">Mint is open now — choose a quantity and confirm in your wallet.</p>
+      <p class="note" style="margin-top:10px" data-i18n="mint.honest">These support steps are requested, not verified on-chain: the contract cannot check X likes, reposts, comments, quotes or follows. Claiming free is open to every wallet until the 33 are gone.</p>
+      <details style="margin-top:14px"><summary data-i18n="mint.agentT">Agent Mint prompt</summary>
+        <p class="note" data-i18n="mint.agentP">Paste the prompt below into your own AI agent wallet (for example the Binance Agentic Wallet). Mint is open now.</p>
+        <pre id="agentPrompt">Mint 1 NFT from The Omnipotent Fossil Archon on BNB Smart Chain (0x04b9F1Ecf9c5417f6327c3AD3Cc07559050cDc8C). Use the free mint if my wallet has not claimed it yet and free mints remain; otherwise mint paid at 0.0003 BNB per token. Minting is random — the token is drawn from the remaining pool. Confirm the exact cost before sending.</pre>
+        <p style="margin-top:10px"><button class="btn small" type="button" id="copyPrompt" data-i18n="mint.copy">Copy prompt</button></p>
+      </details>
+    </div>
+  </section>
 
-<section id="contract">
-  <div class="contract-card">
-    <b data-i18n="contract.title">Contract</b><br><br>
-    <span style="color:var(--muted)" data-i18n="contract.body">Contract <a href="https://bscscan.com/address/0x04b9F1Ecf9c5417f6327c3AD3Cc07559050cDc8C" target="_blank" rel="noopener" style="color:var(--gold2)">0x04b9F1Ecf9c5417f6327c3AD3Cc07559050cDc8C</a> &mdash; BEP-721 on BNB Smart Chain. Mint is live.</span>
-  </div>
-  <br>
-  <div class="support-card">
-    <b data-i18n="support.title">Support</b><br><br>
-    <span style="color:var(--muted)" data-i18n="support.body">Official X: <a href="https://x.com/FossilArchon" target="_blank" rel="noopener" style="color:var(--gold2)">@FossilArchon</a>. The launch post link &mdash; like, repost, comment, quote, follow &mdash; will be added here once it is live.</span>
-    <a class="btn btn-ghost" href="https://x.com/FossilArchon" target="_blank" rel="noopener" style="margin-top:14px" data-i18n="support.follow">Follow @FossilArchon</a>
-  </div>
-</section>
+  <section id="payment">
+    <h2 data-i18n="pay.h">Payment — simple and open</h2>
+    <div class="grid2">
+      <div class="card"><h3 data-i18n="pay.freeT">Free — 33 mints, 1 per wallet</h3><p class="note" data-i18n="pay.freeP">The token is free. You only pay the small network gas fee (around $0.01). All 33 free mints are still available — when they are gone, the free pool is closed for good.</p></div>
+      <div class="card"><h3 data-i18n="pay.paidT">Paid — 0.0003 BNB, no limits</h3><p class="note" data-i18n="pay.paidP">One flat price, 0.0003 BNB per token, plus network gas. No per-wallet limit, no per-transaction limit. Buying first does not burn your free claim — the free mint stays yours until you use it.</p></div>
+    </div>
+    <div class="card" style="margin-top:12px"><h3 data-i18n="pay.whyT">Why is every mint random?</h3><p class="note" data-i18n="pay.whyP">The contract draws one token at random from the remaining pool — first come, first served. Nobody can pick the Genesis or the Archon; the only way to get one is to mint and reveal. The draw happens on-chain, in the open.</p></div>
+  </section>
 
-<section id="share">
-  <h2 data-i18n="share.title">Spread the Word</h2>
-  <p class="sub" data-i18n="share.sub">One post from you reaches people we never could. Copy the draft or post it straight to X &mdash; it takes ten seconds.</p>
-  <div class="share-box"><p id="shareText" data-i18n="share.text">The Omnipotent Fossil Archon is LIVE on BNB Chain! 🦖👑
+  <section id="lineages">
+    <h2 data-i18n="lin.h">Twelve lineages. One Archon.</h2>
+    <p class="sub" data-i18n="lin.sub">Twelve warriors, each in a Base and an Evolved form — 20 editions of each form. Every mint pulls one at random. You only find out which one when it reveals.</p>
+    <div class="grid2">
+      <div class="card tier"><div class="thumb"><img src="assets/base-tyrant.jpg" alt="The Tyrant — Base" loading="lazy"><img src="assets/evolved-tyrant.jpg" alt="The Tyrant — Evolved" loading="lazy"></div><h3 data-i18n="lin.w1">The Tyrant</h3><p class="note" data-i18n="lin.w1p">Base 1–20 · Evolved 241–260 · 20 editions each</p></div>
+      <div class="card tier t2"><div class="thumb"><img src="assets/base-triceratops.jpg" alt="Triceratops — Base" loading="lazy"><img src="assets/evolved-triceratops.jpg" alt="Triceratops — Evolved" loading="lazy"></div><h3 data-i18n="lin.w2">Triceratops</h3><p class="note" data-i18n="lin.w2p">Base 21–40 · Evolved 261–280 · 20 editions each</p></div>
+      <div class="card tier t3"><div class="thumb"><img src="assets/base-palaeo-sky-glider.jpg" alt="Palaeo-Sky Glider — Base" loading="lazy"><img src="assets/evolved-palaeo-sky-glider.jpg" alt="Palaeo-Sky Glider — Evolved" loading="lazy"></div><h3 data-i18n="lin.w3">Palaeo-Sky Glider</h3><p class="note" data-i18n="lin.w3p">Base 41–60 · Evolved 281–300 · 20 editions each</p></div>
+      <div class="card tier"><div class="thumb"><img src="assets/base-saber-tooth.jpg" alt="Saber-Tooth — Base" loading="lazy"><img src="assets/evolved-saber-tooth.jpg" alt="Saber-Tooth — Evolved" loading="lazy"></div><h3 data-i18n="lin.w4">Saber-Tooth</h3><p class="note" data-i18n="lin.w4p">Base 61–80 · Evolved 301–320 · 20 editions each</p></div>
+      <div class="card tier t2"><div class="thumb"><img src="assets/base-raptor-striker.jpg" alt="Raptor Striker — Base" loading="lazy"><img src="assets/evolved-raptor-striker.jpg" alt="Raptor Striker — Evolved" loading="lazy"></div><h3 data-i18n="lin.w5">Raptor Striker</h3><p class="note" data-i18n="lin.w5p">Base 81–100 · Evolved 321–340 · 20 editions each</p></div>
+      <div class="card tier t3"><div class="thumb"><img src="assets/base-long-neck.jpg" alt="Long-Neck — Base" loading="lazy"><img src="assets/evolved-long-neck.jpg" alt="Long-Neck — Evolved" loading="lazy"></div><h3 data-i18n="lin.w6">Long-Neck</h3><p class="note" data-i18n="lin.w6p">Base 101–120 · Evolved 341–360 · 20 editions each</p></div>
+      <div class="card tier"><div class="thumb"><img src="assets/base-spinosaurus.jpg" alt="Spinosaurus / Sail-Back — Base" loading="lazy"><img src="assets/evolved-spinosaurus.jpg" alt="Spinosaurus / Sail-Back — Evolved" loading="lazy"></div><h3 data-i18n="lin.w7">Spinosaurus / Sail-Back</h3><p class="note" data-i18n="lin.w7p">Base 121–140 · Evolved 361–380 · 20 editions each</p></div>
+      <div class="card tier t2"><div class="thumb"><img src="assets/base-water-beast.jpg" alt="Water Beast / Swimmer — Base" loading="lazy"><img src="assets/evolved-water-beast.jpg" alt="Water Beast / Swimmer — Evolved" loading="lazy"></div><h3 data-i18n="lin.w8">Water Beast / Swimmer</h3><p class="note" data-i18n="lin.w8p">Base 141–160 · Evolved 381–400 · 20 editions each</p></div>
+      <div class="card tier t3"><div class="thumb"><img src="assets/base-woolly-titan.jpg" alt="Woolly Titan — Base" loading="lazy"><img src="assets/evolved-woolly-titan.jpg" alt="Woolly Titan — Evolved" loading="lazy"></div><h3 data-i18n="lin.w9">Woolly Titan</h3><p class="note" data-i18n="lin.w9p">Base 161–180 · Evolved 401–420 · 20 editions each</p></div>
+      <div class="card tier"><div class="thumb"><img src="assets/base-bone-head-charger.jpg" alt="Bone-Head Charger — Base" loading="lazy"><img src="assets/evolved-bone-head-charger.jpg" alt="Bone-Head Charger — Evolved" loading="lazy"></div><h3 data-i18n="lin.w10">Bone-Head Charger</h3><p class="note" data-i18n="lin.w10p">Base 181–200 · Evolved 421–440 · 20 editions each</p></div>
+      <div class="card tier t2"><div class="thumb"><img src="assets/base-terrible-claw.jpg" alt="Terrible Claw — Base" loading="lazy"><img src="assets/evolved-terrible-claw.jpg" alt="Terrible Claw — Evolved" loading="lazy"></div><h3 data-i18n="lin.w11">Terrible Claw</h3><p class="note" data-i18n="lin.w11p">Base 201–220 · Evolved 441–460 · 20 editions each</p></div>
+      <div class="card tier t3"><div class="thumb"><img src="assets/base-prime-avian.jpg" alt="Prime Avian — Base" loading="lazy"><img src="assets/evolved-prime-avian.jpg" alt="Prime Avian — Evolved" loading="lazy"></div><h3 data-i18n="lin.w12">Prime Avian</h3><p class="note" data-i18n="lin.w12p">Base 221–240 · Evolved 461–480 · 20 editions each</p></div>
+    </div>
+    <div class="grid2" style="margin-top:12px">
+      <div class="card tier t4"><div class="thumb" style="grid-template-columns:1fr"><img src="assets/archon.jpg" alt="The Archon" loading="lazy"></div><h3 data-i18n="lin.archon">The Archon · 20 editions</h3><p class="note" data-i18n="lin.archonP">Tokens 481–500. White and gold armor over a night city. Every lineage leads to it.</p></div>
+      <div class="card tier t4"><div class="thumb" style="grid-template-columns:1fr"><img src="assets/genesis.jpg" alt="Primordial Genesis" loading="lazy"></div><h3 data-i18n="lin.genesis">Primordial Genesis · 1 of 1</h3><p class="note" data-i18n="lin.genesisP">Token 501. A winged Triceratops sovereign in a golden frame — the first spark of the convergence. There is only one of it, and it is somewhere in the mint pool.</p></div>
+    </div>
+  </section>
+
+  <section id="rarity">
+    <h2 data-i18n="rar.h">Rarity tiers</h2>
+    <p class="sub" data-i18n="rar.sub">From the Fossilize Metaverse tier list. A tier describes the artwork — nothing else.</p>
+    <img src="assets/rarity-tiers.jpg" alt="Rarity tier list — The Fossilize Metaverse" loading="lazy" style="width:100%;max-width:560px;margin:0 auto 20px;border-radius:14px;border:1px solid var(--line)">
+    <div class="card" style="padding:0;overflow:hidden">
+      <div class="tier-row t-common"><b>COMMON</b><p data-i18n="tier.common">Base forms — Long-Neck and the twelve warriors in their base armor.</p></div>
+      <div class="tier-row t-uncommon"><b>UNCOMMON</b><p data-i18n="tier.uncommon">Advanced forms — Crested Caller, Saber-Tooth.</p></div>
+      <div class="tier-row t-rare"><b>RARE</b><p data-i18n="tier.rare">Elite forms — Palaeo-Sky Glider.</p></div>
+      <div class="tier-row t-epic"><b>EPIC</b><p data-i18n="tier.epic">Ascended Evolved — Spinosaurus / Sail-Back, Woolly Titan.</p></div>
+      <div class="tier-row t-legend"><b>LEGENDARY</b><p data-i18n="tier.legend">Mythic Evolution — 001 The Tyrant Evolved and 002 Triceratops Evolved.</p></div>
+    </div>
+  </section>
+
+  <section id="checker">
+    <h2 data-i18n="chk.h">Check a token</h2>
+    <p class="sub" data-i18n="chk.sub">Enter any token ID from 1 to 501 and see its lineage, its form, its edition, and whether it is already minted — no wallet needed.</p>
+    <div class="card">
+      <div class="checkrow"><input id="checkInput" type="number" min="1" max="501" placeholder="e.g. 100" aria-label="Token ID"><button class="btn" type="button" id="checkBtn" data-i18n="chk.btn">Check</button></div>
+      <p class="note" style="margin-top:12px" id="checkOut" data-i18n="chk.hint">Minting is random, but every ID belongs to exactly one portrait — the pool is fixed.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2 data-i18n="rules.h">Honest rules</h2>
+    <div class="card">
+      <p class="note" data-i18n="rules.p">• <b>501 tokens, never more.</b> 12 lineages × 2 forms × 20 editions, plus the Archon (20) and the Primordial Genesis (1 of 1).<br>
+      • <b>Every mint is random.</b> The contract draws from the remaining pool — nobody can pick a token, and nobody knows what they get until it reveals.<br>
+      • <b>No token, no airdrop promised.</b> No roadmap beyond the Archon. Paid mint money goes to the creator; the owner can only open or close mint, update the metadata link, and withdraw.<br>
+      • <b>Independent project on BNB Chain</b> — not a Binance collaboration.<br>
+      • The five support steps are a request, not a gate. The contract cannot verify X actions.</p>
+    </div>
+  </section>
+
+  <section id="faq">
+    <h2 data-i18n="faq.h">Questions</h2>
+    <details><summary data-i18n="faq.q1">How does the mint work?</summary><p data-i18n="faq.a1">Every mint draws one token at random from the pool of 501. You do not choose the artwork — the contract picks it, and the reveal shows what you got. First come, first served.</p></details>
+    <details><summary data-i18n="faq.q2">What is the one-of-one?</summary><p data-i18n="faq.a2">The Primordial Genesis. There is only one in the pool of 501, so only one wallet in the world can ever hold it.</p></details>
+    <details><summary data-i18n="faq.q3">How do I get the free mint?</summary><p data-i18n="faq.a3">33 free mints exist, one per wallet — and claiming is open now, no gate. The five support steps on the launch post are requested as a thank-you, not checked on-chain: the contract cannot verify X actions.</p></details>
+    <details><summary data-i18n="faq.q4">What does a paid mint cost?</summary><p data-i18n="faq.a4">0.0003 BNB per token, plus network gas. There is no per-wallet limit on paid mints, and there is no limit per transaction.</p></details>
+    <details><summary data-i18n="faq.q5">Which wallet can I use?</summary><p data-i18n="faq.a5">Any wallet on BNB Smart Chain — MetaMask, Binance Wallet, or an AI agent wallet like the Binance Agentic Wallet. Make sure you are on BNB Smart Chain (chain 56).</p></details>
+    <details><summary data-i18n="faq.q6">When does minting open?</summary><p data-i18n="faq.a6">Minting is open now — the contract is live on BNB Smart Chain.</p></details>
+    <details><summary data-i18n="faq.q7">Is this an investment?</summary><p data-i18n="faq.a7">No. It is a collectible. Nothing here promises a return.</p></details>
+  </section>
+
+  <section>
+    <h2 data-i18n="sup.h">Support &amp; Contract</h2>
+    <div class="card">
+      <p><b>0x04b9…Dc8C</b> <button class="btn small ghost" type="button" id="copyContract" data-i18n="sup.copy">Copy</button> · <a href="https://bscscan.com/address/0x04b9F1Ecf9c5417f6327c3AD3Cc07559050cDc8C" target="_blank" rel="noopener">BscScan</a></p>
+      <p class="note" style="margin-top:10px" data-i18n="sup.p">Official X: @FossilArchon. The launch post link — like, repost, comment, quote, follow — will be added here once it is live.</p>
+      <p style="margin-top:12px"><a class="btn small ghost" href="https://x.com/FossilArchon" target="_blank" rel="noopener" data-i18n="sup.follow">Follow @FossilArchon</a></p>
+    </div>
+  </section>
+
+  <section id="share">
+    <h2 data-i18n="share.title">Spread the Word</h2>
+    <p class="sub" data-i18n="share.sub">One post from you reaches people we never could. Copy the draft or post it straight to X — it takes ten seconds.</p>
+    <div class="card" style="max-width:640px;margin:0 auto 16px"><p id="shareText" style="white-space:pre-line" data-i18n="share.text">The Omnipotent Fossil Archon is LIVE on BNB Chain! 🦖👑
 
 501 tokens, random mint — one is a 1-of-1 Genesis. 33 free (1/wallet), then 0.0003 BNB.
 
 👇 https://archon-gilt.vercel.app/
 
 #ArchonNFT #BNBChain #NFT</p></div>
-  <div class="share-btns">
-    <a class="btn btn-gold" id="sharePost" href="https://twitter.com/intent/tweet?text=" target="_blank" rel="noopener" data-i18n="share.post">Post on X</a>
-    <button class="btn btn-ghost" id="shareCopy" data-i18n="share.copy">Copy text</button>
-  </div>
-</section>
+    <p style="text-align:center"><a class="btn" id="sharePost" href="https://twitter.com/intent/tweet?text=" target="_blank" rel="noopener" data-i18n="share.post">Post on X</a> <button class="btn ghost" type="button" id="shareCopy" data-i18n="share.copy">Copy text</button></p>
+  </section>
+
+  <footer>
+    <p><b data-i18n="foot.live">THE OMNIPOTENT FOSSIL ARCHON — Mint is live now.</b></p>
+    <p style="margin-top:6px" data-i18n="foot.p">Mint is live on BNB Chain Mainnet. Contract: 0x04b9F1Ecf9c5417f6327c3AD3Cc07559050cDc8C. No token or airdrop is promised. NFTs are collectibles; prices can go to zero. Nothing on this page is financial advice.</p>
+    <p style="margin-top:6px"><span data-i18n="foot.genesis">Paleo-Futuristic NFT Genesis</span> · <span data-i18n="foot.rights">© 2026 The Omnipotent Fossil Archon. All Rights Reserved.</span></p>
+    <p style="margin-top:6px" data-i18n="foot.note">This NFT is a collectible item. It does not promise any financial return. The portraits are shown without text labels, by design.</p>
+  </footer>
 </main>
-
-<footer>
-  <span data-i18n="foot.genesis">Paleo-Futuristic NFT Genesis</span><br>
-  <span data-i18n="foot.rights">&copy; 2026 The Omnipotent Fossil Archon. All Rights Reserved.</span><br><br>
-  <span data-i18n="foot.note">This NFT is a collectible item. It does not promise any financial return. The portraits are shown without text labels, by design.</span>
-</footer>
-<div class="dock">
-  <div class="d-price"><b>0.0003 BNB</b><span data-i18n="dock.note">per token &middot; no wallet limit</span></div>
-  <a class="btn btn-gold" href="#claim" data-i18n="dock.buy">Buy Now</a>
-</div>
-
-<div class="modal" id="modal" role="dialog" aria-modal="true">
-  <div class="modal-box">
-    <button class="modal-x" id="modalClose" aria-label="close">&times;</button>
-    <div class="modal-grid">
-      <img class="m-img" id="mImg" src="" alt="">
-      <div>
-        <div class="m-kicker" id="mKicker"></div>
-        <h3 id="mName"></h3>
-        <div class="trait"><span data-i18n="modal.form">Form</span><b id="mForm"></b></div>
-        <div class="trait"><span data-i18n="modal.ed">Editions</span><b id="mEd"></b></div>
-        <div class="trait"><span data-i18n="modal.lin">Lineage</span><b id="mLin"></b></div>
-        <div class="trait"><span data-i18n="modal.mint">Mint</span><b data-i18n="modal.random">Random &mdash; revealed at mint</b></div>
-        <div class="modal-nav">
-          <button id="mPrev" data-i18n="modal.prev">&larr; Prev</button>
-          <button id="mNext" data-i18n="modal.next">Next &rarr;</button>
-        </div>
-        <div class="modal-nav">
-          <button id="mMint" style="background:linear-gradient(180deg,var(--gold2),var(--gold));color:#0b1026;border-color:transparent" data-i18n="modal.go">Go to Mint</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 <script>
 var STR={
-en:{'badge':'ULTRA RARE • LIMITED EDITION','tag':'“The Ultimate Convergence of Ancient Power — Where All Lineages Unite into One Supreme Entity.”','cta.buy':'Buy Now — 0.0003 BNB','cta.free':'Claim Free (1/wallet)','dock.buy':'Buy Now','dock.note':'per token · no wallet limit','stat.supply':'total supply','stat.lineages':'lineages','stat.forms':'forms each','stat.free':'free mints','stat.paid':'paid mint','menu.title':'Menu','menu.mint':'Mint','menu.collection':'Collection','menu.genesis':'Genesis','menu.rarity':'Rarity','menu.faq':'FAQ','menu.agent':'Agent Mint','menu.contract':'Contract','menu.language':'Language','claim.title':'Claim <span class="n">Your Archon</span>','claim.sub':'Paid mint is open now — buy instantly, no wallet limit. The free mint is open too: 1 per wallet, 33 total. The support steps below are requested, not a lock — claim now, support the launch after.','mystery':'<b>MYSTERY REVEAL</b> — Every mint is random. Each mint draws a random token from the remaining pool, so you will not know which lineage or rarity you get until it reveals. One of the 501 is a one-of-one.','step1.t':'Like the launch post','step1.n':'Opens with the official post — link appears once the post is live.','step2.t':'Repost it','step2.n':'Share it with your timeline.','step3.t':'Comment on the post','step3.n':'Say something — any comment counts.','step4.t':'Quote it','step4.n':'Post it with your own words.','step5.t':'Follow the official account','step5.n':'So you do not miss the next drop.','paid.rec':'RECOMMENDED','paid.title':'Paid Mint','paid.per':'per token','paid.desc':'Always open — no per-wallet limit. Buy as many as you like while supply lasts. A small network gas fee applies on top.','paid.max':'no limit per transaction','paid.total':'Total:','free.title':'Free Mint','free.gas':'network gas only','free.desc':'33 free mints, max 1 per wallet. The token is free — you only pay the small network gas fee (around $0.01 at current gas prices). Once the 33 are gone, minting continues at the paid price.','free.btn':'Claim Free (1)','free.status':'Free status:','free.state':'—','live.minted':'Minted:','live.free':'Free left:','live.note':'Live on BNB Smart Chain — numbers refresh every 30 seconds.','live.fail':'Live numbers unavailable — check your connection.','live.nowallet':'No wallet found — open this page in a wallet browser (MetaMask / Binance Wallet).','live.sent':'Transaction sent — wait for confirmation, then refresh.','live.err':'Mint failed:','live.freeUsed':'You already claimed your free mint — paid mint is still open.','live.freeGone':'Free mints are gone — paid mint is still open.','claim.note':'These support steps are requested, not verified on-chain: the contract cannot check X likes, reposts, comments, quotes or follows. Claiming free is open to every wallet until the 33 are gone.','lin.title':'The Twelve <span class="n">Lineages</span>','lin.sub':'Twelve warriors, each in a Base and an Evolved form, plus the Archon and the Primordial Genesis — 26 portraits on the wall. Every mint pulls one at random. You only find out which one when it reveals.','wall.title':'The Wall','wall.sub':'All 26 portraits hanging on the wall. Tap VIEW to look closer.','stage.inv':'PORTRAIT {n} / 26 · THE VAULT','shuffle':'Shuffle','tile.view':'VIEW','modal.kicker':'ARCHON · PORTRAIT {n} / 26','modal.form':'Form','modal.ed':'Editions','modal.lin':'Lineage','modal.mint':'Mint','modal.random':'Random — revealed at mint','modal.prev':'← Prev','modal.next':'Next →','modal.go':'Go to Mint','gen.title':'The Genesis <span class="n">Card</span>','gen.p1':'Primordial Genesis. A winged Triceratops sovereign in a golden frame — the first spark of the convergence. There is only one of it, and it is somewhere in the mint pool.','gen.p2':'The Archon is the figure above: white and gold armor over a night city. Every lineage leads to it.','rar.title':'Rarity <span class="n">Tiers</span>','rar.sub':'From the Fossilize Metaverse tier list. A tier describes the artwork — nothing else.','tier.common':'Base forms — Long-Neck and the twelve warriors in their base armor.','tier.uncommon':'Advanced forms — Crested Caller, Saber-Tooth.','tier.rare':'Elite forms — Palaeo-Sky Glider.','tier.epic':'Ascended Evolved — Spinosaurus / Sail-Back, Woolly Titan.','tier.legend':'Mythic Evolution — 001 The Tyrant Evolved and 002 Triceratops Evolved.','faq.title':'FAQ','faq.sub':'The short answers.','faq.q1':'How does the mint work?','faq.a1':'Every mint draws one token at random from the pool of 501. You do not choose the artwork — the contract picks it, and the reveal shows what you got. First come, first served.','faq.q2':'What is the one-of-one?','faq.a2':'The Primordial Genesis. There is only one in the pool of 501, so only one wallet in the world can ever hold it.','faq.q3':'How do I get the free mint?','faq.a3':'33 free mints exist, one per wallet — and claiming is open now, no gate. The five support steps on the launch post are requested as a thank-you, not checked on-chain: the contract cannot verify X actions.','faq.q4':'What does a paid mint cost?','faq.a4':'0.0003 BNB per token, plus network gas. There is no per-wallet limit on paid mints, and there is no limit per transaction.','faq.q5':'Which wallet can I use?','faq.a5':'Any wallet on BNB Smart Chain — MetaMask, Binance Wallet, or an AI agent wallet like the Binance Agentic Wallet. Make sure you are on BNB Smart Chain (chain 56).','faq.q6':'When does minting open?','faq.a6':'Minting is open now — the contract is live on BNB Smart Chain.','faq.q7':'Is this an investment?','faq.a7':'No. It is a collectible. Nothing here promises a return.','agent.title':'Agent <span class="n">Mint</span>','agent.sub':'Mint with an AI agent wallet (for example the Binance Agentic Wallet). Paste this prompt to your agent:','contract.title':'Contract','contract.body':'Contract <a href=\"https://bscscan.com/address/0x04b9F1Ecf9c5417f6327c3AD3Cc07559050cDc8C\" target=\"_blank\" rel=\"noopener\" style=\"color:var(--gold2)\">0x04b9F1Ecf9c5417f6327c3AD3Cc07559050cDc8C</a> — BEP-721 on BNB Smart Chain. Mint is live.','support.title':'Support','support.body':'Official X: <a href="https://x.com/FossilArchon" target="_blank" rel="noopener" style="color:var(--gold2)">@FossilArchon</a>. The launch post link — like, repost, comment, quote, follow — will be added here once it is live.','support.follow':'Follow @FossilArchon','foot.genesis':'Paleo-Futuristic NFT Genesis','foot.rights':'© 2026 The Omnipotent Fossil Archon. All Rights Reserved.','foot.note':'This NFT is a collectible item. It does not promise any financial return. The portraits are shown without text labels, by design.','form.base':'BASE FORM','form.evolved':'EVOLVED FORM','form.archon':'ARCHON','form.genesis':'GENESIS','formShort.base':'Base','formShort.evolved':'Evolved','formShort.archon':'Archon','formShort.genesis':'Genesis','edShort.20':'20 editions','edShort.1':'1 of 1','ed.20':'20 of 501','ed.1':'1 of 1','lin.n':'{n} of 12','lin.all':'All 12 lineages','menu.share':'Share','share.title':'Spread the Word','share.sub':'One post from you reaches people we never could. Copy the draft or post it straight to X — it takes ten seconds.','share.text':'The Omnipotent Fossil Archon is LIVE on BNB Chain! 🦖👑\n\n501 tokens, random mint — one is a 1-of-1 Genesis. 33 free (1/wallet), then 0.0003 BNB.\n\n👇 https://archon-gilt.vercel.app/\n\n#ArchonNFT #BNBChain #NFT','share.post':'Post on X','share.copy':'Copy text','share.copied':'Copied!','lin.one':'One of one'},
-id:{'badge':'ULTRA RARE • EDISI TERBATAS','tag':'“Konvergensi tertinggi dari kekuatan purba — tempat semua lineage bersatu menjadi satu entitas tertinggi.”','cta.buy':'Beli Sekarang — 0.0003 BNB','cta.free':'Klaim Gratis (1/wallet)','dock.buy':'Beli Sekarang','dock.note':'per token · tanpa batas wallet','stat.supply':'total suplai','stat.lineages':'lineage','stat.forms':'bentuk tiap lineage','stat.free':'mint gratis','stat.paid':'mint berbayar','menu.title':'Menu','menu.mint':'Mint','menu.collection':'Koleksi','menu.genesis':'Genesis','menu.rarity':'Rarity','menu.faq':'FAQ','menu.agent':'Agent Mint','menu.contract':'Kontrak','menu.language':'Bahasa','claim.title':'Klaim <span class="n">Archon-mu</span>','claim.sub':'Mint berbayar sudah buka — beli langsung, tanpa batas per wallet. Mint gratis juga sudah buka: 1 per wallet, total 33. Lima langkah dukungan di bawah ini diminta, bukan syarat — klaim sekarang, dukung setelahnya.','mystery':'<b>MYSTERY REVEAL</b> — Setiap mint bersifat acak. Setiap mint menarik satu token secara acak dari pool yang tersisa, jadi kamu tidak akan tahu lineage atau rarity apa yang kamu dapat sampai terungkap. Satu dari 501 adalah one-of-one.','step1.t':'Like postingan peluncuran','step1.n':'Membuka postingan resmi — tautan muncul setelah postingan tayang.','step2.t':'Repost','step2.n':'Bagikan ke timeline kamu.','step3.t':'Komentari postingan','step3.n':'Katakan sesuatu — komentar apa pun dihitung.','step4.t':'Quote','step4.n':'Posting dengan kata-katamu sendiri.','step5.t':'Follow akun resmi','step5.n':'Supaya tidak ketinggalan drop berikutnya.','paid.rec':'DIREKOMENDASIKAN','paid.title':'Mint Berbayar','paid.per':'per token','paid.desc':'Selalu buka — tanpa batas per wallet. Beli sebanyak yang kamu mau selama persediaan masih ada. Ditambah gas jaringan yang kecil.','paid.max':'tanpa batas per transaksi','paid.total':'Total:','free.title':'Mint Gratis','free.gas':'hanya gas jaringan','free.desc':'33 mint gratis, maks 1 per wallet. Tokennya gratis — kamu cuma bayar gas jaringan yang kecil (sekitar $0.01 saat ini). Setelah 33 habis, mint berlanjut dengan harga berbayar.','free.btn':'Klaim Gratis (1)','free.status':'Status gratis:','free.state':'—','live.minted':'Ter-mint:','live.free':'Gratis tersisa:','live.note':'Live di BNB Smart Chain — angka diperbarui setiap 30 detik.','live.fail':'Angka live tidak tersedia — periksa koneksimu.','live.nowallet':'Wallet tidak ditemukan — buka halaman ini di browser wallet (MetaMask / Binance Wallet).','live.sent':'Transaksi dikirim — tunggu konfirmasi, lalu refresh.','live.err':'Mint gagal:','live.freeUsed':'Kamu sudah klaim mint gratis — mint berbayar tetap buka.','live.freeGone':'Mint gratis sudah habis — mint berbayar tetap buka.','claim.note':'Langkah dukungan ini diminta, bukan diverifikasi on-chain: kontrak tidak bisa memeriksa like, repost, komentar, quote, atau follow di X. Klaim gratis terbuka untuk semua wallet sampai 33 habis.','lin.title':'Dua Belas <span class="n">Lineage</span>','lin.sub':'Dua belas warrior, masing-masing dalam bentuk Base dan Evolved, ditambah Archon dan Primordial Genesis — 26 portrait di dinding. Setiap mint menarik satu secara acak. Kamu baru tahu yang mana saat terungkap.','wall.title':'Dinding','wall.sub':'Semua 26 portrait tergantung di dinding. Ketuk LIHAT untuk melihat lebih dekat.','stage.inv':'POTRET {n} / 26 · VAULT','shuffle':'Acak','tile.view':'LIHAT','modal.kicker':'ARCHON · POTRET {n} / 26','modal.form':'Bentuk','modal.ed':'Edisi','modal.lin':'Lineage','modal.mint':'Mint','modal.random':'Acak — terungkap saat mint','modal.prev':'← Sebelumnya','modal.next':'Berikutnya →','modal.go':'Ke Mint','gen.title':'Kartu <span class="n">Genesis</span>','gen.p1':'Primordial Genesis. Triceratops bersayap berdaulat dalam bingkai emas — percikan pertama dari konvergensi. Hanya ada satu, dan ia ada di suatu tempat dalam mint pool.','gen.p2':'Archon adalah figur di atas: armor putih dan emas di atas kota malam. Setiap lineage mengarah padanya.','rar.title':'Tingkat <span class="n">Rarity</span>','rar.sub':'Dari daftar tier Fossilize Metaverse. Tier menggambarkan artwork — tidak lebih.','tier.common':'Bentuk Base — Long-Neck dan dua belas warrior dalam armor base mereka.','tier.uncommon':'Bentuk lanjutan — Crested Caller, Saber-Tooth.','tier.rare':'Bentuk elite — Palaeo-Sky Glider.','tier.epic':'Ascended Evolved — Spinosaurus / Sail-Back, Woolly Titan.','tier.legend':'Mythic Evolution — 001 The Tyrant Evolved dan 002 Triceratops Evolved.','faq.title':'FAQ','faq.sub':'Jawaban singkat.','faq.q1':'Bagaimana cara kerja mint?','faq.a1':'Setiap mint menarik satu token secara acak dari pool 501. Kamu tidak memilih artwork — kontrak yang memilih, dan reveal menunjukkan apa yang kamu dapat. Siapa cepat, dia dapat.','faq.q2':'Apa itu one-of-one?','faq.a2':'Primordial Genesis. Hanya ada satu di pool 501, jadi hanya satu wallet di dunia yang bisa memilikinya.','faq.q3':'Bagaimana cara dapat mint gratis?','faq.a3':'Ada 33 mint gratis, satu per wallet — dan klaim sudah buka sekarang, tanpa syarat. Lima langkah dukungan di postingan peluncuran diminta sebagai ucapan terima kasih, bukan diperiksa on-chain: kontrak tidak bisa memverifikasi aksi di X.','faq.q4':'Berapa biaya mint berbayar?','faq.a4':'0.0003 BNB per token, ditambah gas jaringan. Tidak ada batas per wallet untuk mint berbayar, dan tidak ada batas per transaksi.','faq.q5':'Wallet apa yang bisa dipakai?','faq.a5':'Wallet apa pun di BNB Smart Chain — MetaMask, Binance Wallet, atau wallet agen AI seperti Binance Agentic Wallet. Pastikan kamu berada di BNB Smart Chain (chain 56).','faq.q6':'Kapan minting dibuka?','faq.a6':'Minting sudah buka — kontrak sudah live di BNB Smart Chain.','faq.q7':'Apakah ini investasi?','faq.a7':'Bukan. Ini barang koleksi. Tidak ada yang menjanjikan keuntungan di sini.','agent.title':'Agent <span class="n">Mint</span>','agent.sub':'Mint dengan wallet agen AI (misalnya Binance Agentic Wallet). Tempel prompt ini ke agenmu:','contract.title':'Kontrak','contract.body':'Kontrak <a href=\"https://bscscan.com/address/0x04b9F1Ecf9c5417f6327c3AD3Cc07559050cDc8C\" target=\"_blank\" rel=\"noopener\" style=\"color:var(--gold2)\">0x04b9F1Ecf9c5417f6327c3AD3Cc07559050cDc8C</a> — BEP-721 di BNB Smart Chain. Mint sudah live.','support.title':'Support','support.body':'X resmi: <a href="https://x.com/FossilArchon" target="_blank" rel="noopener" style="color:var(--gold2)">@FossilArchon</a>. Tautan postingan peluncuran — like, repost, komentar, quote, follow — akan ditambahkan di sini setelah tayang.','support.follow':'Follow @FossilArchon','foot.genesis':'Paleo-Futuristic NFT Genesis','foot.rights':'© 2026 The Omnipotent Fossil Archon. Hak cipta dilindungi.','foot.note':'NFT ini adalah barang koleksi. Tidak ada janji keuntungan finansial. Portrait ditampilkan tanpa label teks, memang disengaja.','form.base':'BENTUK BASE','form.evolved':'BENTUK EVOLVED','form.archon':'ARCHON','form.genesis':'GENESIS','formShort.base':'Base','formShort.evolved':'Evolved','formShort.archon':'Archon','formShort.genesis':'Genesis','edShort.20':'20 edisi','edShort.1':'1 of 1','ed.20':'20 dari 501','ed.1':'1 of 1','lin.n':'{n} dari 12','lin.all':'Semua 12 lineage','menu.share':'Bagikan','share.title':'Bantu Sebarkan','share.sub':'Satu postingan darimu menjangkau orang yang tidak pernah kami jangkau. Salin drafnya atau posting langsung ke X — cuma sepuluh detik.','share.text':'The Omnipotent Fossil Archon sudah LIVE di BNB Chain! 🦖👑\n\n501 token, random mint — satu adalah Genesis 1-of-1. 33 gratis (1/wallet), lalu 0,0003 BNB.\n\n👇 https://archon-gilt.vercel.app/\n\n#ArchonNFT #BNBChain #NFT','share.post':'Posting ke X','share.copy':'Salin teks','share.copied':'Disalin!','lin.one':'Satu-satunya'},
-ja:{'badge':'ウルトラレア • リミテッドエディション','tag':'“古代の力の究極の収束——すべての系譜がひとつの至高の存在へと集う。”','cta.buy':'今すぐ購入 — 0.0003 BNB','cta.free':'無料で受け取る（1ウォレットあたり1つ）','dock.buy':'今すぐ購入','dock.note':'1トークンあたり · ウォレット制限なし','stat.supply':'総供給','stat.lineages':'系譜','stat.forms':'各2フォーム','stat.free':'無料ミント','stat.paid':'有料ミント','menu.title':'メニュー','menu.mint':'ミント','menu.collection':'コレクション','menu.genesis':'ジェネシス','menu.rarity':'レアリティ','menu.faq':'FAQ','menu.agent':'エージェントミント','menu.contract':'コントラクト','menu.language':'言語','claim.title':'<span class="n">アルコン</span>を受け取る','claim.sub':'有料ミントは受付中です——すぐに購入でき、ウォレットごとの制限はありません。無料ミントも受付中です：1ウォレットあたり1つ、計33枠。下のサポート手順はお願いであり、条件ではありません——今すぐ受け取り、後で応援してください。','mystery':'<b>ミステリーリビール</b> — すべてのミントはランダムです。ミントするたびに残りのプールからランダムに1トークンが引かれるため、どの系譜やレアリティが当たるかは明かされるまで分かりません。501のうち1つはワンオブワンです。','step1.t':'ローンチ投稿に「いいね」','step1.n':'公式投稿が開きます——リンクは投稿の公開後に表示されます。','step2.t':'リポストする','step2.n':'タイムラインでシェアします。','step3.t':'投稿にコメントする','step3.n':'何か一言——どんなコメントでもOKです。','step4.t':'引用する','step4.n':'自分の言葉を添えて投稿します。','step5.t':'公式アカウントをフォロー','step5.n':'次のドロップを見逃さないために。','paid.rec':'おすすめ','paid.title':'有料ミント','paid.per':'1トークンあたり','paid.desc':'常時受付中——ウォレットごとの制限はありません。在庫がある限り、好きなだけ購入できます。ネットワークガス代が別途かかります。','paid.max':'トランザクションごとの制限なし','paid.total':'合計：','free.title':'無料ミント','free.gas':'ネットワークガスのみ','free.desc':'無料ミントは33枠、1ウォレットあたり1つまで。トークン自体は無料です——ネットワークガス代（現在は約0.01ドル）のみお支払いください。33枠がなくなれば、有料価格でのミントに移ります。','free.btn':'無料で受け取る（1）','free.status':'無料枠の状況：','free.state':'—','live.minted':'ミント済み：','live.free':'無料残り：','live.note':'BNBスマートチェーンでライブ——数値は30秒ごとに更新されます。','live.fail':'ライブ数値を取得できません——接続を確認してください。','live.nowallet':'ウォレットが見つかりません——ウォレットブラウザ（MetaMask / Binance Wallet）でこのページを開いてください。','live.sent':'トランザクションを送信しました——確認後、更新してください。','live.err':'ミントに失敗しました：','live.freeUsed':'無料ミントはすでに受け取り済みです——有料ミントは引き続き利用できます。','live.freeGone':'無料ミントは終了しました——有料ミントは引き続き利用できます。','claim.note':'これらのサポート手順はお願いであり、オンチェーンで検証されるものではありません。コントラクトはXのいいね、リポスト、コメント、引用、フォローを確認できません。無料枠は33がなくなるまで、すべてのウォレットに開かれています。','lin.title':'十二の<span class="n">系譜</span>','lin.sub':'12人の戦士、それぞれベースと進化の2フォームに、アルコンとプライマル・ジェネシスを加えた全26枚のポートレート。ミントするたびに1枚がランダムに引かれます。何が当たったかは明かされて初めて分かります。','wall.title':'壁','wall.sub':'26枚のポートレートがすべて壁に掛かっています。VIEWをタップして近くで見る。','stage.inv':'ポートレート {n} / 26 · VAULT','shuffle':'シャッフル','tile.view':'見る','modal.kicker':'ARCHON · ポートレート {n} / 26','modal.form':'フォーム','modal.ed':'エディション','modal.lin':'系譜','modal.mint':'ミント','modal.random':'ランダム——ミント時に明かされます','modal.prev':'← 前へ','modal.next':'次へ →','modal.go':'ミントへ','gen.title':'<span class="n">ジェネシス</span>カード','gen.p1':'プライマル・ジェネシス。黄金の額縁に収められた翼持つトリケラトプスの君主——収束の最初の火花。その1枚だけが存在し、ミントプールのどこかにあります。','gen.p2':'アルコンは上の姿です。夜の街を背景にした白と金の鎧。すべての系譜は彼へとつながります。','rar.title':'<span class="n">レアリティ</span>ティア','rar.sub':'フォッシライズ・メタバースのティアリストより。ティアはアートワークを表すものです——それ以上ではありません。','tier.common':'ベースフォーム——ロングネックと12人の戦士のベースアーマー姿。','tier.uncommon':'上級フォーム——クレステッド・コーラー、セイバー・トゥース。','tier.rare':'エリートフォーム——パレオ・スカイ・グライダー。','tier.epic':'アセンデッド進化——スピノサウルス／セイルバック、ウーリー・タイタン。','tier.legend':'ミシック・エボリューション——001 ザ・タイラント進化と002 トリケラトプス進化。','faq.title':'FAQ','faq.sub':'短い答え。','faq.q1':'ミントの仕組みは？','faq.a1':'ミントするたびに501のプールからランダムに1トークンが引かれます。アートワークを選ぶことはできません——コントラクトが選び、リビールで結果が分かります。先着順です。','faq.q2':'ワンオブワンとは？','faq.a2':'プライマル・ジェネシス。501のプールに1枚だけ存在するため、世界でひとつのウォレットだけが保有できます。','faq.q3':'無料ミントの受け取り方は？','faq.a3':'無料ミントは33枠、1ウォレットあたり1つです——受け取りは今すぐ可能で、条件はありません。ローンチ投稿での5つのサポート手順は感謝の気持ちとしてお願いするもので、オンチェーンでは確認されません。コントラクトはXのアクションを検証できません。','faq.q4':'有料ミントの価格は？','faq.a4':'1トークンあたり0.0003 BNBで、ネットワークガスが別途かかります。有料ミントにウォレットごとの制限はなく、1トランザクションの制限もありません。','faq.q5':'どのウォレットが使えますか？','faq.a5':'BNBスマートチェーン対応のウォレットならどれでも——MetaMask、Binance Wallet、Binance Agentic WalletのようなAIエージェントウォレットも使えます。BNBスマートチェーン（チェーン56）に接続していることを確認してください。','faq.q6':'ミントはいつ始まりますか？','faq.a6':'ミントは受付中です——コントラクトはBNBスマートチェーンで稼働中です。','faq.q7':'これは投資ですか？','faq.a7':'いいえ。コレクティブルです。ここでは何もリターンを約束していません。','agent.title':'<span class="n">エージェント</span>ミント','agent.sub':'AIエージェントウォレット（Binance Agentic Walletなど）でミントします。このプロンプトをエージェントに貼り付けてください：','contract.title':'コントラクト','contract.body':'コントラクト <a href=\"https://bscscan.com/address/0x04b9F1Ecf9c5417f6327c3AD3Cc07559050cDc8C\" target=\"_blank\" rel=\"noopener\" style=\"color:var(--gold2)\">0x04b9F1Ecf9c5417f6327c3AD3Cc07559050cDc8C</a> — BNBスマートチェーンのBEP-721。ミントは受付中です。','support.title':'サポート','support.body':'公式X: <a href="https://x.com/FossilArchon" target="_blank" rel="noopener" style="color:var(--gold2)">@FossilArchon</a>。ローンチ投稿のリンク——いいね、リポスト、コメント、引用、フォロー——は公開後にここに追加されます。','support.follow':'@FossilArchonをフォロー','foot.genesis':'Paleo-Futuristic NFT Genesis','foot.rights':'© 2026 The Omnipotent Fossil Archon. All Rights Reserved.','foot.note':'このNFTはコレクティブルです。金銭的なリターンを約束するものではありません。ポートレートは意図的にテキストラベルなしで表示されています。','form.base':'ベースフォーム','form.evolved':'進化フォーム','form.archon':'アルコン','form.genesis':'ジェネシス','formShort.base':'ベース','formShort.evolved':'進化','formShort.archon':'アルコン','formShort.genesis':'ジェネシス','edShort.20':'20エディション','edShort.1':'1 of 1','ed.20':'501点中20点','ed.1':'1 of 1','lin.n':'第{n}系譜','lin.all':'12の系譜すべて','menu.share':'シェア','share.title':'広めよう','share.sub':'あなたの1投稿が、私たちでは届かない人に届きます。下書きをコピーするか、Xにそのまま投稿——10秒でできます。','share.text':'The Omnipotent Fossil Archon、BNBチェーンでライブ！🦖👑\n\n501トークン、ランダムミント——1枚はワンオブワンのGenesis。33枠無料（11ウォレット1つ）、その後は0.0003 BNB。\n\n👇 https://archon-gilt.vercel.app/\n\n#ArchonNFT #BNBChain #NFT','share.post':'Xに投稿','share.copy':'テキストをコピー','share.copied':'コピーしました！','lin.one':'唯一無二'}};
-var lang='en';
-try{var _sl=localStorage.getItem('archon-lang');if(_sl&&STR[_sl]){lang=_sl;}}catch(e){}
+en:{'nav.mint':'Mint','nav.lineages':'Lineages','nav.rarity':'Rarity','nav.faq':'FAQ','nav.buy':'Buy Now','hero.h1':'THE OMNIPOTENT FOSSIL ARCHON','hero.tag':'“The Ultimate Convergence of Ancient Power — Where All Lineages Unite into One Supreme Entity.”','hero.lede':'501 tokens. 12 lineages in Base and Evolved forms, plus the Archon and a one-of-one Genesis. Every mint is random — you will not know which one you get until it reveals.','pill.supply':'tokens','pill.free':'free (1/wallet)','pill.paid':'paid mint','pill.random':'Random mint','hero.ctaBuy':'Buy Now — 0.0003 BNB','hero.ctaFree':'Claim Free (1/wallet)','hero.note':'Mint is live. Connect your wallet on BNB Chain — this page never asks for your keys.','stat.supply':'Total supply','stat.free':'Free mints','stat.paid':'BNB per token','stat.minted':'Minted (live)','stat.note':'Live from the contract — updates every 30 seconds. No wallet needed to view.','how.h':'Mint your Archon in three steps.','how.sub':'No forms, no allowlist, no voucher. Just your wallet and BNB — and a little luck.','how.s1t':'Open in a wallet browser','how.s1p':'Open this page in MetaMask or Binance Wallet, on BNB Smart Chain (chain 56).','how.s2t':'Choose free or paid','how.s2p':'Claim your 1 free mint if you have not yet — or buy as many as you like at 0.0003 BNB each.','how.s3t':'Confirm and reveal','how.s3p':'Confirm in your wallet. The contract draws one token at random — the reveal shows what you got.','mint.h':'Claim your Archon','mint.sub':'Paid mint is open now — buy instantly, no wallet limit. The free mint is open too: 1 per wallet, 33 total. The support steps below are requested, not a lock — claim now, support the launch after.','mint.mystery':'<b>MYSTERY REVEAL</b> — Every mint is random. Each mint draws a random token from the remaining pool, so you will not know which lineage or rarity you get until it reveals. One of the 501 is a one-of-one.','step1.t':'Like the launch post','step1.n':'Opens with the official post — link appears once the post is live.','step2.t':'Repost it','step2.n':'Share it with your timeline.','step3.t':'Comment on the post','step3.n':'Say something — any comment counts.','step4.t':'Quote it','step4.n':'Post it with your own words.','step5.t':'Follow the official account','step5.n':'So you do not miss the next drop.','paid.rec':'RECOMMENDED','paid.title':'Paid Mint','paid.per':'per token','paid.desc':'Always open — no per-wallet limit. Buy as many as you like while supply lasts. A small network gas fee applies on top.','paid.max':'no limit per transaction','paid.total':'Total:','paid.btn':'Buy Now','free.title':'Free Mint','free.gas':'network gas only','free.desc':'33 free mints, max 1 per wallet. The token is free — you only pay the small network gas fee (around $0.01 at current gas prices). Once the 33 are gone, minting continues at the paid price.','free.btn':'Claim Free (1)','free.status':'Free status:','mint.line':'Minted: Loading…','mint.note':'Mint is open now — choose a quantity and confirm in your wallet.','mint.line2':'Minted: {n} / 501 · Free left: {f}','form.base':'Base','form.evolved':'Evolved','form.archon':'Archon','form.genesis':'Genesis','tier.common':'Common','tier.uncommon':'Uncommon','tier.rare':'Rare','tier.epic':'Epic','tier.legendary':'Legendary','tier.archon':'Ultra Rare','tier.genesis':'One of One','live.nowallet':'No wallet found — open this page in a wallet browser (MetaMask / Binance Wallet).','live.sent':'Transaction sent — wait for confirmation, then refresh.','live.err':'Mint failed:','live.freeUsed':'You already claimed your free mint — paid mint is still open.','live.freeGone':'Free mints are gone — paid mint is still open.','mint.honest':'These support steps are requested, not verified on-chain: the contract cannot check X likes, reposts, comments, quotes or follows. Claiming free is open to every wallet until the 33 are gone.','mint.agentT':'Agent Mint prompt','mint.agentP':'Paste the prompt below into your own AI agent wallet (for example the Binance Agentic Wallet). Mint is open now.','mint.copy':'Copy prompt','mint.copied':'Copied!','pay.h':'Payment — simple and open','pay.freeT':'Free — 33 mints, 1 per wallet','pay.freeP':'The token is free. You only pay the small network gas fee (around $0.01). All 33 free mints are still available — when they are gone, the free pool is closed for good.','pay.paidT':'Paid — 0.0003 BNB, no limits','pay.paidP':'One flat price, 0.0003 BNB per token, plus network gas. No per-wallet limit, no per-transaction limit. Buying first does not burn your free claim — the free mint stays yours until you use it.','pay.whyT':'Why is every mint random?','pay.whyP':'The contract draws one token at random from the remaining pool — first come, first served. Nobody can pick the Genesis or the Archon; the only way to get one is to mint and reveal. The draw happens on-chain, in the open.','lin.h':'Twelve lineages. One Archon.','lin.sub':'Twelve warriors, each in a Base and an Evolved form — 20 editions of each form. Every mint pulls one at random. You only find out which one when it reveals.','lin.w1':'The Tyrant','lin.w1p':'Base 1–20 · Evolved 241–260 · 20 editions each','lin.w2':'Triceratops','lin.w2p':'Base 21–40 · Evolved 261–280 · 20 editions each','lin.w3':'Palaeo-Sky Glider','lin.w3p':'Base 41–60 · Evolved 281–300 · 20 editions each','lin.w4':'Saber-Tooth','lin.w4p':'Base 61–80 · Evolved 301–320 · 20 editions each','lin.w5':'Raptor Striker','lin.w5p':'Base 81–100 · Evolved 321–340 · 20 editions each','lin.w6':'Long-Neck','lin.w6p':'Base 101–120 · Evolved 341–360 · 20 editions each','lin.w7':'Spinosaurus / Sail-Back','lin.w7p':'Base 121–140 · Evolved 361–380 · 20 editions each','lin.w8':'Water Beast / Swimmer','lin.w8p':'Base 141–160 · Evolved 381–400 · 20 editions each','lin.w9':'Woolly Titan','lin.w9p':'Base 161–180 · Evolved 401–420 · 20 editions each','lin.w10':'Bone-Head Charger','lin.w10p':'Base 181–200 · Evolved 421–440 · 20 editions each','lin.w11':'Terrible Claw','lin.w11p':'Base 201–220 · Evolved 441–460 · 20 editions each','lin.w12':'Prime Avian','lin.w12p':'Base 221–240 · Evolved 461–480 · 20 editions each','lin.archon':'The Archon · 20 editions','lin.archonP':'Tokens 481–500. White and gold armor over a night city. Every lineage leads to it.','lin.genesis':'Primordial Genesis · 1 of 1','lin.genesisP':'Token 501. A winged Triceratops sovereign in a golden frame — the first spark of the convergence. There is only one of it, and it is somewhere in the mint pool.','rar.h':'Rarity tiers','rar.sub':'From the Fossilize Metaverse tier list. A tier describes the artwork — nothing else.','tier.common':'Base forms — Long-Neck and the twelve warriors in their base armor.','tier.uncommon':'Advanced forms — Crested Caller, Saber-Tooth.','tier.rare':'Elite forms — Palaeo-Sky Glider.','tier.epic':'Ascended Evolved — Spinosaurus / Sail-Back, Woolly Titan.','tier.legend':'Mythic Evolution — 001 The Tyrant Evolved and 002 Triceratops Evolved.','chk.h':'Check a token','chk.sub':'Enter any token ID from 1 to 501 and see its lineage, its form, its edition, and whether it is already minted — no wallet needed.','chk.btn':'Check','chk.hint':'Minting is random, but every ID belongs to exactly one portrait — the pool is fixed.','rules.h':'Honest rules','rules.p':'• <b>501 tokens, never more.</b> 12 lineages × 2 forms × 20 editions, plus the Archon (20) and the Primordial Genesis (1 of 1).<br>• <b>Every mint is random.</b> The contract draws from the remaining pool — nobody can pick a token, and nobody knows what they get until it reveals.<br>• <b>No token, no airdrop promised.</b> No roadmap beyond the Archon. Paid mint money goes to the creator; the owner can only open or close mint, update the metadata link, and withdraw.<br>• <b>Independent project on BNB Chain</b> — not a Binance collaboration.<br>• The five support steps are a request, not a gate. The contract cannot verify X actions.','faq.h':'Questions','faq.q1':'How does the mint work?','faq.a1':'Every mint draws one token at random from the pool of 501. You do not choose the artwork — the contract picks it, and the reveal shows what you got. First come, first served.','faq.q2':'What is the one-of-one?','faq.a2':'The Primordial Genesis. There is only one in the pool of 501, so only one wallet in the world can ever hold it.','faq.q3':'How do I get the free mint?','faq.a3':'33 free mints exist, one per wallet — and claiming is open now, no gate. The five support steps on the launch post are requested as a thank-you, not checked on-chain: the contract cannot verify X actions.','faq.q4':'What does a paid mint cost?','faq.a4':'0.0003 BNB per token, plus network gas. There is no per-wallet limit on paid mints, and there is no limit per transaction.','faq.q5':'Which wallet can I use?','faq.a5':'Any wallet on BNB Smart Chain — MetaMask, Binance Wallet, or an AI agent wallet like the Binance Agentic Wallet. Make sure you are on BNB Smart Chain (chain 56).','faq.q6':'When does minting open?','faq.a6':'Minting is open now — the contract is live on BNB Smart Chain.','faq.q7':'Is this an investment?','faq.a7':'No. It is a collectible. Nothing here promises a return.','sup.h':'Support & Contract','sup.copy':'Copy','sup.copied':'Copied!','sup.p':'Official X: @FossilArchon. The launch post link — like, repost, comment, quote, follow — will be added here once it is live.','sup.follow':'Follow @FossilArchon','share.title':'Spread the Word','share.sub':'One post from you reaches people we never could. Copy the draft or post it straight to X — it takes ten seconds.','share.text':'The Omnipotent Fossil Archon is LIVE on BNB Chain! 🦖👑\n\n501 tokens, random mint — one is a 1-of-1 Genesis. 33 free (1/wallet), then 0.0003 BNB.\n\n👇 https://archon-gilt.vercel.app/\n\n#ArchonNFT #BNBChain #NFT','share.post':'Post on X','share.copy':'Copy text','share.copied':'Copied!','foot.live':'THE OMNIPOTENT FOSSIL ARCHON — Mint is live now.','foot.p':'Mint is live on BNB Chain Mainnet. Contract: 0x04b9F1Ecf9c5417f6327c3AD3Cc07559050cDc8C. No token or airdrop is promised. NFTs are collectibles; prices can go to zero. Nothing on this page is financial advice.','foot.genesis':'Paleo-Futuristic NFT Genesis','foot.rights':'© 2026 The Omnipotent Fossil Archon. All Rights Reserved.','foot.note':'This NFT is a collectible item. It does not promise any financial return. The portraits are shown without text labels, by design.'},
+id:{'nav.mint':'Mint','nav.lineages':'Lineage','nav.rarity':'Rarity','nav.faq':'FAQ','nav.buy':'Beli Sekarang','hero.h1':'THE OMNIPOTENT FOSSIL ARCHON','hero.tag':'“Konvergensi tertinggi dari kekuatan purba — tempat semua lineage bersatu menjadi satu entitas tertinggi.”','hero.lede':'501 token. 12 lineage dalam bentuk Base dan Evolved, ditambah Archon dan Genesis satu-satunya. Setiap mint bersifat acak — kamu tidak akan tahu yang mana yang kamu dapat sampai terungkap.','pill.supply':'token','pill.free':'gratis (1/wallet)','pill.paid':'mint berbayar','pill.random':'Mint acak','hero.ctaBuy':'Beli Sekarang — 0,0003 BNB','hero.ctaFree':'Klaim Gratis (1/wallet)','hero.note':'Mint sudah live. Hubungkan wallet di BNB Chain — halaman ini tidak pernah meminta kunci privatmu.','stat.supply':'Total suplai','stat.free':'Mint gratis','stat.paid':'BNB per token','stat.minted':'Ter-mint (live)','stat.note':'Live dari kontrak — diperbarui setiap 30 detik. Melihat saja tidak butuh wallet.','how.h':'Mint Archon-mu dalam tiga langkah.','how.sub':'Tanpa formulir, tanpa allowlist, tanpa voucher. Cukup wallet dan BNB — dan sedikit keberuntungan.','how.s1t':'Buka di browser wallet','how.s1p':'Buka halaman ini di MetaMask atau Binance Wallet, di BNB Smart Chain (chain 56).','how.s2t':'Pilih gratis atau berbayar','how.s2p':'Klaim 1 mint gratis kalau belum — atau beli sebanyak yang kamu mau, 0,0003 BNB per token.','how.s3t':'Konfirmasi dan reveal','how.s3p':'Konfirmasi di wallet. Kontrak menarik satu token secara acak — reveal menunjukkan apa yang kamu dapat.','mint.h':'Klaim Archon-mu','mint.sub':'Mint berbayar sudah buka — beli langsung, tanpa batas per wallet. Mint gratis juga sudah buka: 1 per wallet, total 33. Lima langkah dukungan di bawah ini diminta, bukan syarat — klaim sekarang, dukung setelahnya.','mint.mystery':'<b>MYSTERY REVEAL</b> — Setiap mint bersifat acak. Setiap mint menarik satu token secara acak dari pool yang tersisa, jadi kamu tidak akan tahu lineage atau rarity apa yang kamu dapat sampai terungkap. Satu dari 501 adalah one-of-one.','step1.t':'Like postingan peluncuran','step1.n':'Membuka postingan resmi — tautan muncul setelah postingan tayang.','step2.t':'Repost','step2.n':'Bagikan ke timeline kamu.','step3.t':'Komentari postingan','step3.n':'Katakan sesuatu — komentar apa pun dihitung.','step4.t':'Quote','step4.n':'Posting dengan kata-katamu sendiri.','step5.t':'Follow akun resmi','step5.n':'Supaya tidak ketinggalan drop berikutnya.','paid.rec':'DIREKOMENDASIKAN','paid.title':'Mint Berbayar','paid.per':'per token','paid.desc':'Selalu buka — tanpa batas per wallet. Beli sebanyak yang kamu mau selama persediaan masih ada. Ditambah gas jaringan yang kecil.','paid.max':'tanpa batas per transaksi','paid.total':'Total:','paid.btn':'Beli Sekarang','free.title':'Mint Gratis','free.gas':'hanya gas jaringan','free.desc':'33 mint gratis, maks 1 per wallet. Tokennya gratis — kamu cuma bayar gas jaringan yang kecil (sekitar $0,01 saat ini). Setelah 33 habis, mint berlanjut dengan harga berbayar.','free.btn':'Klaim Gratis (1)','free.status':'Status gratis:','mint.line':'Ter-mint: Memuat…','mint.note':'Mint sudah buka — pilih jumlah dan konfirmasi di wallet.','mint.line2':'Ter-mint: {n} / 501 · Gratis tersisa: {f}','form.base':'Base','form.evolved':'Evolved','form.archon':'Archon','form.genesis':'Genesis','tier.common':'Common','tier.uncommon':'Uncommon','tier.rare':'Rare','tier.epic':'Epic','tier.legendary':'Legendary','tier.archon':'Ultra Rare','tier.genesis':'Satu-satunya','live.nowallet':'Wallet tidak ditemukan — buka halaman ini di browser wallet (MetaMask / Binance Wallet).','live.sent':'Transaksi dikirim — tunggu konfirmasi, lalu refresh.','live.err':'Mint gagal:','live.freeUsed':'Kamu sudah klaim mint gratis — mint berbayar tetap buka.','live.freeGone':'Mint gratis sudah habis — mint berbayar tetap buka.','mint.honest':'Langkah dukungan ini diminta, bukan diverifikasi on-chain: kontrak tidak bisa memeriksa like, repost, komentar, quote, atau follow di X. Klaim gratis terbuka untuk semua wallet sampai 33 habis.','mint.agentT':'Prompt Agent Mint','mint.agentP':'Tempel prompt di bawah ini ke wallet agen AI kamu (misalnya Binance Agentic Wallet). Mint sudah buka.','mint.copy':'Salin prompt','mint.copied':'Disalin!','pay.h':'Pembayaran — sederhana dan terbuka','pay.freeT':'Gratis — 33 mint, 1 per wallet','pay.freeP':'Tokennya gratis. Kamu cuma bayar gas jaringan yang kecil (sekitar $0,01). Semua 33 mint gratis masih tersedia — setelah habis, pool gratis ditutup selamanya.','pay.paidT':'Berbayar — 0,0003 BNB, tanpa batas','pay.paidP':'Satu harga tetap, 0,0003 BNB per token, ditambah gas jaringan. Tanpa batas per wallet, tanpa batas per transaksi. Beli duluan tidak menghanguskan klaim gratis — mint gratis tetap milikmu sampai kamu pakai.','pay.whyT':'Kenapa semua mint bersifat acak?','pay.whyP':'Kontrak menarik satu token secara acak dari pool yang tersisa — siapa cepat, dia dapat. Tidak ada yang bisa memilih Genesis atau Archon; satu-satunya cara mendapatkannya adalah mint lalu reveal. Penarikan terjadi on-chain, secara terbuka.','lin.h':'Dua belas lineage. Satu Archon.','lin.sub':'Dua belas warrior, masing-masing dalam bentuk Base dan Evolved — 20 edisi per bentuk. Setiap mint menarik satu secara acak. Kamu baru tahu yang mana saat terungkap.','lin.w1':'The Tyrant','lin.w1p':'Base 1–20 · Evolved 241–260 · 20 edisi tiap bentuk','lin.w2':'Triceratops','lin.w2p':'Base 21–40 · Evolved 261–280 · 20 edisi tiap bentuk','lin.w3':'Palaeo-Sky Glider','lin.w3p':'Base 41–60 · Evolved 281–300 · 20 edisi tiap bentuk','lin.w4':'Saber-Tooth','lin.w4p':'Base 61–80 · Evolved 301–320 · 20 edisi tiap bentuk','lin.w5':'Raptor Striker','lin.w5p':'Base 81–100 · Evolved 321–340 · 20 edisi tiap bentuk','lin.w6':'Long-Neck','lin.w6p':'Base 101–120 · Evolved 341–360 · 20 edisi tiap bentuk','lin.w7':'Spinosaurus / Sail-Back','lin.w7p':'Base 121–140 · Evolved 361–380 · 20 edisi tiap bentuk','lin.w8':'Water Beast / Swimmer','lin.w8p':'Base 141–160 · Evolved 381–400 · 20 edisi tiap bentuk','lin.w9':'Woolly Titan','lin.w9p':'Base 161–180 · Evolved 401–420 · 20 edisi tiap bentuk','lin.w10':'Bone-Head Charger','lin.w10p':'Base 181–200 · Evolved 421–440 · 20 edisi tiap bentuk','lin.w11':'Terrible Claw','lin.w11p':'Base 201–220 · Evolved 441–460 · 20 edisi tiap bentuk','lin.w12':'Prime Avian','lin.w12p':'Base 221–240 · Evolved 461–480 · 20 edisi tiap bentuk','lin.archon':'The Archon · 20 edisi','lin.archonP':'Token 481–500. Armor putih dan emas di atas kota malam. Setiap lineage mengarah padanya.','lin.genesis':'Primordial Genesis · 1 of 1','lin.genesisP':'Token 501. Triceratops bersayap berdaulat dalam bingkai emas — percikan pertama dari konvergensi. Hanya ada satu, dan ia ada di suatu tempat dalam mint pool.','rar.h':'Tingkat rarity','rar.sub':'Dari daftar tier Fossilize Metaverse. Tier menggambarkan artwork — tidak lebih.','tier.common':'Bentuk Base — Long-Neck dan dua belas warrior dalam armor base mereka.','tier.uncommon':'Bentuk lanjutan — Crested Caller, Saber-Tooth.','tier.rare':'Bentuk elite — Palaeo-Sky Glider.','tier.epic':'Ascended Evolved — Spinosaurus / Sail-Back, Woolly Titan.','tier.legend':'Mythic Evolution — 001 The Tyrant Evolved dan 002 Triceratops Evolved.','chk.h':'Cek token','chk.sub':'Masukkan ID token 1 sampai 501 untuk melihat lineage, bentuk, edisi, dan apakah sudah ter-mint — tanpa wallet.','chk.btn':'Cek','chk.hint':'Mint bersifat acak, tapi setiap ID milik tepat satu portrait — pool-nya tetap.','rules.h':'Aturan jujur','rules.p':'• <b>501 token, tidak lebih.</b> 12 lineage × 2 bentuk × 20 edisi, ditambah Archon (20) dan Primordial Genesis (1 of 1).<br>• <b>Setiap mint bersifat acak.</b> Kontrak menarik dari pool yang tersisa — tidak ada yang bisa memilih token, dan tidak ada yang tahu apa yang didapat sampai terungkap.<br>• <b>Tidak ada janji token atau airdrop.</b> Tidak ada roadmap di luar Archon. Uang mint berbayar masuk ke creator; owner hanya bisa membuka/menutup mint, memperbarui tautan metadata, dan menarik dana.<br>• <b>Proyek independen di BNB Chain</b> — bukan kolaborasi Binance.<br>• Lima langkah dukungan adalah permintaan, bukan syarat. Kontrak tidak bisa memverifikasi aksi di X.','faq.h':'Pertanyaan','faq.q1':'Bagaimana cara kerja mint?','faq.a1':'Setiap mint menarik satu token secara acak dari pool 501. Kamu tidak memilih artwork — kontrak yang memilih, dan reveal menunjukkan apa yang kamu dapat. Siapa cepat, dia dapat.','faq.q2':'Apa itu one-of-one?','faq.a2':'Primordial Genesis. Hanya ada satu di pool 501, jadi hanya satu wallet di dunia yang bisa memilikinya.','faq.q3':'Bagaimana cara dapat mint gratis?','faq.a3':'Ada 33 mint gratis, satu per wallet — dan klaim sudah buka sekarang, tanpa syarat. Lima langkah dukungan di postingan peluncuran diminta sebagai ucapan terima kasih, bukan diperiksa on-chain: kontrak tidak bisa memverifikasi aksi di X.','faq.q4':'Berapa biaya mint berbayar?','faq.a4':'0,0003 BNB per token, ditambah gas jaringan. Tidak ada batas per wallet untuk mint berbayar, dan tidak ada batas per transaksi.','faq.q5':'Wallet apa yang bisa dipakai?','faq.a5':'Wallet apa pun di BNB Smart Chain — MetaMask, Binance Wallet, atau wallet agen AI seperti Binance Agentic Wallet. Pastikan kamu berada di BNB Smart Chain (chain 56).','faq.q6':'Kapan minting dibuka?','faq.a6':'Minting sudah buka — kontrak sudah live di BNB Smart Chain.','faq.q7':'Apakah ini investasi?','faq.a7':'Bukan. Ini barang koleksi. Tidak ada yang menjanjikan keuntungan di sini.','sup.h':'Support & Kontrak','sup.copy':'Salin','sup.copied':'Disalin!','sup.p':'X resmi: @FossilArchon. Tautan postingan peluncuran — like, repost, komentar, quote, follow — akan ditambahkan di sini setelah tayang.','sup.follow':'Follow @FossilArchon','share.title':'Bantu Sebarkan','share.sub':'Satu postingan darimu menjangkau orang yang tidak pernah kami jangkau. Salin drafnya atau posting langsung ke X — cuma sepuluh detik.','share.text':'The Omnipotent Fossil Archon sudah LIVE di BNB Chain! 🦖👑\n\n501 token, random mint — satu adalah Genesis 1-of-1. 33 gratis (1/wallet), lalu 0,0003 BNB.\n\n👇 https://archon-gilt.vercel.app/\n\n#ArchonNFT #BNBChain #NFT','share.post':'Posting ke X','share.copy':'Salin teks','share.copied':'Disalin!','foot.live':'THE OMNIPOTENT FOSSIL ARCHON — Mint sudah live.','foot.p':'Mint live di BNB Chain Mainnet. Kontrak: 0x04b9F1Ecf9c5417f6327c3AD3Cc07559050cDc8C. Tidak ada janji token atau airdrop. NFT adalah barang koleksi; harganya bisa jadi nol. Tidak ada saran finansial di halaman ini.','foot.genesis':'Paleo-Futuristic NFT Genesis','foot.rights':'© 2026 The Omnipotent Fossil Archon. Hak cipta dilindungi.','foot.note':'NFT ini adalah barang koleksi. Tidak ada janji keuntungan finansial. Portrait ditampilkan tanpa label teks, memang disengaja.'},
+ja:{'nav.mint':'ミント','nav.lineages':'系譜','nav.rarity':'レアリティ','nav.faq':'FAQ','nav.buy':'今すぐ購入','hero.h1':'THE OMNIPOTENT FOSSIL ARCHON','hero.tag':'“古代の力の究極の収束——すべての系譜がひとつの至高の存在へと集う。”','hero.lede':'501トークン。12の系譜がベースと進化の2フォームに、アルコンとワンオブワンのジェネシスを加えた構成。すべてのミントはランダム——何が当たるかは明かされるまで分かりません。','pill.supply':'トークン','pill.free':'無料（1ウォレット1つ）','pill.paid':'有料ミント','pill.random':'ランダムミント','hero.ctaBuy':'今すぐ購入 — 0.0003 BNB','hero.ctaFree':'無料で受け取る（1ウォレット1つ）','hero.note':'ミントは受付中です。BNBチェーンでウォレットを接続してください——このページが秘密鍵を尋ねることはありません。','stat.supply':'総供給','stat.free':'無料ミント','stat.paid':'1トークンあたりBNB','stat.minted':'ミント済み（ライブ）','stat.note':'コントラクトからライブ取得——30秒ごとに更新。見るだけならウォレットは不要です。','how.h':'3ステップでアルコンをミントしよう。','how.sub':'フォームも、許可リストも、バウチャーも不要。ウォレットとBNBだけ——そして少しの運。','how.s1t':'ウォレットブラウザで開く','how.s1p':'MetaMaskまたはBinance Walletでこのページを開き、BNBスマートチェーン（チェーン56）に接続してください。','how.s2t':'無料か有料かを選ぶ','how.s2p':'まだ受け取っていなければ無料ミント1つを請求するか、0.0003 BNBで好きなだけ購入してください。','how.s3t':'承認してリビール','how.s3p':'ウォレットで承認します。コントラクトがランダムに1トークンを引き——リビールで結果が分かります。','mint.h':'アルコンを受け取る','mint.sub':'有料ミントは受付中です——すぐに購入でき、ウォレットごとの制限はありません。無料ミントも受付中です：1ウォレットあたり1つ、計33枠。下のサポート手順はお願いであり、条件ではありません——今すぐ受け取り、後で応援してください。','mint.mystery':'<b>ミステリーリビール</b> — すべてのミントはランダムです。ミントするたびに残りのプールからランダムに1トークンが引かれるため、どの系譜やレアリティが当たるかは明かされるまで分かりません。501のうち1つはワンオブワンです。','step1.t':'ローンチ投稿に「いいね」','step1.n':'公式投稿が開きます——リンクは投稿の公開後に表示されます。','step2.t':'リポストする','step2.n':'タイムラインでシェアします。','step3.t':'投稿にコメントする','step3.n':'何か一言——どんなコメントでもOKです。','step4.t':'引用する','step4.n':'自分の言葉を添えて投稿します。','step5.t':'公式アカウントをフォロー','step5.n':'次のドロップを見逃さないために。','paid.rec':'おすすめ','paid.title':'有料ミント','paid.per':'1トークンあたり','paid.desc':'常時受付中——ウォレットごとの制限はありません。在庫がある限り、好きなだけ購入できます。ネットワークガス代が別途かかります。','paid.max':'トランザクションごとの制限なし','paid.total':'合計：','paid.btn':'今すぐ購入','free.title':'無料ミント','free.gas':'ネットワークガスのみ','free.desc':'無料ミントは33枠、1ウォレットあたり1つまで。トークン自体は無料です——ネットワークガス代（現在は約0.01ドル）のみお支払いください。33枠がなくなれば、有料価格でのミントに移ります。','free.btn':'無料で受け取る（1）','free.status':'無料枠の状況：','mint.line':'ミント済み：読み込み中…','mint.note':'ミントは受付中です——数量を選んでウォレットで承認してください。','mint.line2':'ミント済み：{n} / 501 · 無料残り：{f}','form.base':'ベース','form.evolved':'進化','form.archon':'アルコン','form.genesis':'ジェネシス','tier.common':'コモン','tier.uncommon':'アンコモン','tier.rare':'レア','tier.epic':'エピック','tier.legendary':'レジェンダリー','tier.archon':'ウルトラレア','tier.genesis':'ワンオブワン','live.nowallet':'ウォレットが見つかりません——ウォレットブラウザ（MetaMask / Binance Wallet）でこのページを開いてください。','live.sent':'トランザクションを送信しました——確認後、更新してください。','live.err':'ミントに失敗しました：','live.freeUsed':'無料ミントはすでに受け取り済みです——有料ミントは引き続き利用できます。','live.freeGone':'無料ミントは終了しました——有料ミントは引き続き利用できます。','mint.honest':'これらのサポート手順はお願いであり、オンチェーンで検証されるものではありません。コントラクトはXのいいね、リポスト、コメント、引用、フォローを確認できません。無料枠は33がなくなるまで、すべてのウォレットに開かれています。','mint.agentT':'エージェントミントのプロンプト','mint.agentP':'下のプロンプトをあなたのAIエージェントウォレット（Binance Agentic Walletなど）に貼り付けてください。ミントは受付中です。','mint.copy':'プロンプトをコピー','mint.copied':'コピーしました！','pay.h':'支払い——シンプルで透明に','pay.freeT':'無料——33枠、1ウォレット1つ','pay.freeP':'トークン自体は無料です。ネットワークガス代（現在は約0.01ドル）のみお支払いください。33枠の無料ミントはすべてまだ残っています——なくなれば、無料プールは完全に終了します。','pay.paidT':'有料——0.0003 BNB、制限なし','pay.paidP':'1トークンあたり0.0003 BNBの均一価格に、ネットワークガスが加わります。ウォレットごとの制限も、トランザクションごとの制限もありません。先に購入しても無料枠は失われません——無料ミントは使うまであなたのものです。','pay.whyT':'なぜすべてのミントがランダムなの？','pay.whyP':'コントラクトが残りのプールからランダムに1トークンを引きます——先着順です。誰もジェネシスやアルコンを選ぶことはできません。手に入れる方法はミントしてリビールするだけです。抽選はオンチェーンで、公開されています。','lin.h':'十二の系譜。ひとつのアルコン。','lin.sub':'12人の戦士、それぞれベースと進化の2フォーム——各フォーム20エディション。ミントするたびに1枚がランダムに引かれます。何が当たったかは明かされて初めて分かります。','lin.w1':'ザ・タイラント','lin.w1p':'ベース 1–20 · 進化 241–260 · 各20エディション','lin.w2':'トリケラトプス','lin.w2p':'ベース 21–40 · 進化 261–280 · 各20エディション','lin.w3':'パレオ・スカイ・グライダー','lin.w3p':'ベース 41–60 · 進化 281–300 · 各20エディション','lin.w4':'セイバー・トゥース','lin.w4p':'ベース 61–80 · 進化 301–320 · 各20エディション','lin.w5':'ラプター・ストライカー','lin.w5p':'ベース 81–100 · 進化 321–340 · 各20エディション','lin.w6':'ロングネック','lin.w6p':'ベース 101–120 · 進化 341–360 · 各20エディション','lin.w7':'スピノサウルス／セイルバック','lin.w7p':'ベース 121–140 · 進化 361–380 · 各20エディション','lin.w8':'ウォーター・ビースト／スイマー','lin.w8p':'ベース 141–160 · 進化 381–400 · 各20エディション','lin.w9':'ウーリー・タイタン','lin.w9p':'ベース 161–180 · 進化 401–420 · 各20エディション','lin.w10':'ボーン・ヘッド・チャージャー','lin.w10p':'ベース 181–200 · 進化 421–440 · 各20エディション','lin.w11':'テリブル・クロー','lin.w11p':'ベース 201–220 · 進化 441–460 · 各20エディション','lin.w12':'プライム・エイビアン','lin.w12p':'ベース 221–240 · 進化 461–480 · 各20エディション','lin.archon':'アルコン · 20エディション','lin.archonP':'トークン 481–500。夜の街を背景にした白と金の鎧。すべての系譜は彼へとつながります。','lin.genesis':'プライマル・ジェネシス · 1 of 1','lin.genesisP':'トークン501。黄金の額縁に収められた翼持つトリケラトプスの君主——収束の最初の火花。その1枚だけが存在し、ミントプールのどこかにあります。','rar.h':'レアリティティア','rar.sub':'フォッシライズ・メタバースのティアリストより。ティアはアートワークを表すものです——それ以上ではありません。','tier.common':'ベースフォーム——ロングネックと12人の戦士のベースアーマー姿。','tier.uncommon':'上級フォーム——クレステッド・コーラー、セイバー・トゥース。','tier.rare':'エリートフォーム——パレオ・スカイ・グライダー。','tier.epic':'アセンデッド進化——スピノサウルス／セイルバック、ウーリー・タイタン。','tier.legend':'ミシック・エボリューション——001 ザ・タイラント進化と002 トリケラトプス進化。','chk.h':'トークンを確認する','chk.sub':'1から501までのトークンIDを入力すると、系譜、フォーム、エディション、ミント済みかどうかが表示されます——ウォレットは不要です。','chk.btn':'確認する','chk.hint':'ミントはランダムですが、すべてのIDは正確に1枚のポートレートに属します——プールは固定です。','rules.h':'正直なルール','rules.p':'• <b>501トークンのみで、それ以上増えません。</b>12系譜 × 2フォーム × 20エディションに、アルコン（20）とプライマル・ジェネシス（1 of 1）を加えた構成です。<br>• <b>すべてのミントはランダムです。</b>コントラクトが残りのプールから引きます——誰もトークンを選ぶことはできず、明かされるまで何が当たったか分かりません。<br>• <b>トークンやエアドロップの約束はありません。</b>アルコン以外のロードマップはありません。有料ミントの収益は作成者に渡ります。所有者ができるのは、ミントの開閉、メタデータリンクの更新、出金のみです。<br>• <b>BNBチェーン上の独立したプロジェクトです</b>——Binanceとのコラボレーションではありません。<br>• 5つのサポート手順はお願いであり、条件ではありません。コントラクトはXのアクションを検証できません。','faq.h':'質問','faq.q1':'ミントの仕組みは？','faq.a1':'ミントするたびに501のプールからランダムに1トークンが引かれます。アートワークを選ぶことはできません——コントラクトが選び、リビールで結果が分かります。先着順です。','faq.q2':'ワンオブワンとは？','faq.a2':'プライマル・ジェネシス。501のプールに1枚だけ存在するため、世界でひとつのウォレットだけが保有できます。','faq.q3':'無料ミントの受け取り方は？','faq.a3':'無料ミントは33枠、1ウォレットあたり1つです——受け取りは今すぐ可能で、条件はありません。ローンチ投稿での5つのサポート手順は感謝の気持ちとしてお願いするもので、オンチェーンでは確認されません。コントラクトはXのアクションを検証できません。','faq.q4':'有料ミントの価格は？','faq.a4':'1トークンあたり0.0003 BNBで、ネットワークガスが別途かかります。有料ミントにウォレットごとの制限はなく、1トランザクションの制限もありません。','faq.q5':'どのウォレットが使えますか？','faq.a5':'BNBスマートチェーン対応のウォレットならどれでも——MetaMask、Binance Wallet、Binance Agentic WalletのようなAIエージェントウォレットも使えます。BNBスマートチェーン（チェーン56）に接続していることを確認してください。','faq.q6':'ミントはいつ始まりますか？','faq.a6':'ミントは受付中です——コントラクトはBNBスマートチェーンで稼働中です。','faq.q7':'これは投資ですか？','faq.a7':'いいえ。コレクティブルです。ここでは何もリターンを約束していません。','sup.h':'サポート & コントラクト','sup.copy':'コピー','sup.copied':'コピーしました！','sup.p':'公式X: @FossilArchon。ローンチ投稿のリンク——いいね、リポスト、コメント、引用、フォロー——は公開後にここに追加されます。','sup.follow':'@FossilArchonをフォロー','share.title':'広めよう','share.sub':'あなたの1投稿が、私たちでは届かない人に届きます。下書きをコピーするか、Xにそのまま投稿——10秒でできます。','share.text':'The Omnipotent Fossil Archon、BNBチェーンでライブ！🦖👑\n\n501トークン、ランダムミント——1枚はワンオブワンのGenesis。33枠無料（1ウォレットあたり1つ）、その後は0.0003 BNB。\n\n👇 https://archon-gilt.vercel.app/\n\n#ArchonNFT #BNBChain #NFT','share.post':'Xに投稿','share.copy':'テキストをコピー','share.copied':'コピーしました！','foot.live':'THE OMNIPOTENT FOSSIL ARCHON — ミントは現在オープンしています。','foot.p':'ミントはBNBチェーンメインネットで受付中です。コントラクト：0x04b9F1Ecf9c5417f6327c3AD3Cc07559050cDc8C。トークンやエアドロップの約束はありません。NFTはコレクションアイテムであり、価格がゼロになることもあります。このページの内容は投資助言ではありません。','foot.genesis':'Paleo-Futuristic NFT Genesis','foot.rights':'© 2026 The Omnipotent Fossil Archon. All Rights Reserved.','foot.note':'このNFTはコレクティブルです。金銭的なリターンを約束するものではありません。ポートレートは意図的にテキストラベルなしで表示されています。'}};
+var lang=localStorage.getItem('archon_lang')||'en';
 function t(k){var d=STR[lang]||STR.en;return (d[k]!==undefined)?d[k]:(STR.en[k]||k);}
-function applyLang(l){
-  if(l&&STR[l]){lang=l;}
-  try{localStorage.setItem('archon-lang',lang);}catch(e){}
-  document.documentElement.lang=lang;
-  document.querySelectorAll('[data-i18n]').forEach(function(el){
-    var v=t(el.getAttribute('data-i18n'));
-    if(v.indexOf('<')!==-1||v.indexOf('&')!==-1){el.innerHTML=v;}else{el.textContent=v;}
-  });
-  document.querySelectorAll('.lang-btn').forEach(function(b){b.classList.toggle('active',b.getAttribute('data-lang')===lang);});
-  var sh=document.getElementById('shuffleBtn');if(sh){sh.textContent=t('shuffle');}
-  if(typeof buildWall==='function'){buildWall();}
-  if(typeof renderStage==='function'){renderStage();}
-  if(typeof modalOpen!=='undefined'&&modalOpen){openModal(modalIdx);}
-  if(typeof updateShare==='function'){updateShare();}
-}
-function updateShare(){
-  var a=document.getElementById('sharePost');if(!a)return;
-  a.href='https://twitter.com/intent/tweet?text='+encodeURIComponent(t('share.text'));
-}
-document.getElementById('shareCopy').addEventListener('click',function(){
-  var txt=t('share.text');var btn=document.getElementById('shareCopy');
-  function done(){var o=btn.textContent;btn.textContent=t('share.copied');setTimeout(function(){btn.textContent=o;},2000);}
-  function fallback(){var ta=document.createElement('textarea');ta.value=txt;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');done();}catch(e){}document.body.removeChild(ta);}
-  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done,function(){fallback();});}else{fallback();}
-});
-var drawer=document.getElementById('drawer'),scrim=document.getElementById('scrim');
-function openDrawer(){drawer.classList.add('open');scrim.classList.add('open');}
-function closeDrawer(){drawer.classList.remove('open');scrim.classList.remove('open');}
-document.getElementById('burger').addEventListener('click',openDrawer);
-document.getElementById('drawerClose').addEventListener('click',closeDrawer);
-scrim.addEventListener('click',closeDrawer);
-drawer.querySelectorAll('.d-link,.d-cta a').forEach(function(a){a.addEventListener('click',closeDrawer);});
-document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeDrawer();}});
-document.querySelectorAll('.lang-btn').forEach(function(b){b.addEventListener('click',function(){applyLang(b.getAttribute('data-lang'));});});
-var WARRIORS=[
-{name:"The Tyrant",slug:"tyrant"},
-{name:"Triceratops",slug:"triceratops"},
-{name:"Palaeo-Sky Glider",slug:"palaeo-sky-glider"},
-{name:"Saber-Tooth",slug:"saber-tooth"},
-{name:"Raptor Striker",slug:"raptor-striker"},
-{name:"Long-Neck",slug:"long-neck"},
-{name:"Spinosaurus / Sail-Back",slug:"spinosaurus"},
-{name:"Water Beast / Swimmer",slug:"water-beast"},
-{name:"Woolly Titan",slug:"woolly-titan"},
-{name:"Bone-Head Charger",slug:"bone-head-charger"},
-{name:"Terrible Claw",slug:"terrible-claw"},
-{name:"Prime Avian",slug:"prime-avian"}];
-var ART=[];
-WARRIORS.forEach(function(w,i){
-  ART.push({name:w.name,img:'assets/base-'+w.slug+'.jpg',labelKey:'form.base',tag:'base',dot:'#7ea2ff',edKey:'ed.20',edShortKey:'edShort.20',linKey:'lin.n',linNum:i+1,formKey:'formShort.base'});
-  ART.push({name:w.name,img:'assets/evolved-'+w.slug+'.jpg',labelKey:'form.evolved',tag:'evo',dot:'#e8c85a',edKey:'ed.20',edShortKey:'edShort.20',linKey:'lin.n',linNum:i+1,formKey:'formShort.evolved'});
-});
-ART.push({name:'The Archon',img:'assets/archon.jpg',labelKey:'form.archon',tag:'evo',dot:'#e8c85a',edKey:'ed.20',edShortKey:'edShort.20',linKey:'lin.all',formKey:'formShort.archon'});
-ART.push({name:'Primordial Genesis',img:'assets/genesis.jpg',labelKey:'form.genesis',tag:'evo',dot:'#ffb03a',edKey:'ed.1',edShortKey:'edShort.1',linKey:'lin.one',formKey:'formShort.genesis'});
-var cur=0, modalIdx=0, modalOpen=false;
-var stage=document.getElementById('stage'),
-    stageInv=document.getElementById('stageInv'),
-    stageName=document.getElementById('stageName'),
-    stagePill=document.getElementById('stagePill'),
-    wall=document.getElementById('wall');
-function artImg(a){return a.img;}
-function formLabel(a){return t(a.labelKey);}
-function edShort(a){return t(a.edShortKey);}
-function edFull(a){return t(a.edKey);}
-function formShort(a){return t(a.formKey);}
-function linText(a){return a.linKey==='lin.n'?t('lin.n').replace('{n}',a.linNum):t(a.linKey);}
-function stageCard(a,cls,dx,scale,bright){
-  return '<div class="stage-card '+cls+'" data-i="'+a.pos+'" style="transform:translateX(calc(-50% + '+dx+'px)) scale('+scale+');filter:brightness('+bright+')"><img src="'+artImg(a)+'" alt="'+a.name+' '+a.form+' form"'+(cls==='center'?'':' loading="lazy"')+'><span class="sc-pill">'+(a.pos+1)+' / '+ART.length+'</span><div class="sc-cap"><b>'+a.name+'</b><span>'+formLabel(a)+' &middot; '+edShort(a).toUpperCase()+'</span></div></div>';
-}
-function renderStage(){
-  var n=ART.length, out='';
-  [[-2,'far',-300,.62,.3],[-1,'near',-160,.8,.55],[0,'center',0,1,1],[1,'near',160,.8,.55],[2,'far',300,.62,.3]].forEach(function(cfg){
-    var a=ART[(cur+cfg[0]+n)%n]; a.pos=(cur+cfg[0]+n)%n;
-    out+=stageCard(a,cfg[1],cfg[2],cfg[3],cfg[4]);
-  });
-  var arrows=stage.querySelectorAll('.stage-arrow');
-  stage.innerHTML=out;
-  arrows.forEach(function(b){stage.appendChild(b);});
-  var a=ART[cur];
-  stageInv.textContent=t('stage.inv').replace('{n}',cur+1);
-  stageName.textContent=a.name;
-  stagePill.innerHTML='<span class="ftag '+a.tag+'">'+formLabel(a)+' &middot; '+edShort(a).toUpperCase()+'</span>';
-  stage.querySelectorAll('.stage-card').forEach(function(el){
-    el.addEventListener('click',function(){
-      var i=parseInt(el.getAttribute('data-i'),10);
-      if(i===cur){openModal(cur);}else{stageGo(i);}
-    });
-  });
-}
-function stageGo(i){cur=(i+ART.length)%ART.length;renderStage();restartAuto();}
-document.getElementById('stagePrev').addEventListener('click',function(){stageGo(cur-1);});
-document.getElementById('stageNext').addEventListener('click',function(){stageGo(cur+1);});
-document.getElementById('shuffleBtn').addEventListener('click',function(){var n;do{n=Math.floor(Math.random()*ART.length);}while(n===cur);stageGo(n);});
-var autoTimer=null;
-function restartAuto(){if(autoTimer){clearInterval(autoTimer);}autoTimer=setInterval(function(){if(!modalOpen){stageGo(cur+1);}},5000);}
-function buildWall(){wall.innerHTML='';ART.forEach(function(a,i){
-  var t=document.createElement('div');
-  t.className='tile';
-  t.innerHTML='<div class="mat"><img src="'+artImg(a)+'" alt="'+a.name+' '+a.form+' form" loading="lazy"></div>'
-    +'<div class="t-label"><span>'+formLabel(a)+'</span><span class="dot" style="background:'+a.dot+'"></span></div>'
-    +'<h4>'+a.name+'</h4><p class="t-ed">'+edShort(a)+'</p>'
-    +'<button class="view">'+t('tile.view')+'</button>';
-  t.querySelector('.view').addEventListener('click',function(){openModal(i);});
-  t.querySelector('.mat').addEventListener('click',function(){openModal(i);});
-  wall.appendChild(t);
-});
-}
-var modal=document.getElementById('modal');
-function openModal(i){
-  modalIdx=(i+ART.length)%ART.length; modalOpen=true;
-  var a=ART[modalIdx];
-  document.getElementById('mImg').src=artImg(a);
-  document.getElementById('mImg').alt=a.name+' '+a.form+' form';
-  document.getElementById('mKicker').textContent=t('modal.kicker').replace('{n}',modalIdx+1);
-  document.getElementById('mName').textContent=a.name;
-  document.getElementById('mForm').textContent=formShort(a);
-  document.getElementById('mEd').textContent=edFull(a);
-  document.getElementById('mLin').textContent=linText(a);
-  modal.classList.add('open');
-}
-function closeModal(){modalOpen=false;modal.classList.remove('open');}
-document.getElementById('modalClose').addEventListener('click',closeModal);
-modal.addEventListener('click',function(e){if(e.target===modal){closeModal();}});
-document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeModal();}});
-document.getElementById('mPrev').addEventListener('click',function(){openModal(modalIdx-1);});
-document.getElementById('mNext').addEventListener('click',function(){openModal(modalIdx+1);});
-document.getElementById('mMint').addEventListener('click',function(){closeModal();location.hash='#claim';});
-applyLang(lang);
-restartAuto();
+function setLang(l){lang=l;localStorage.setItem('archon_lang',l);document.documentElement.lang=l;
+document.getElementById('b-en').className=l=='en'?'on':'';document.getElementById('b-id').className=l=='id'?'on':'';document.getElementById('b-ja').className=l=='ja'?'on':'';
+document.querySelectorAll('[data-i18n]').forEach(function(el){var k=el.getAttribute('data-i18n');if(STR.en[k])el.innerHTML=t(k);});
+updateShare();renderLive();}
+setLang(lang);
 var CONTRACT='0x04b9F1Ecf9c5417f6327c3AD3Cc07559050cDc8C';
 var PRICE=0.0003, SUPPLY=501, FREE_TOTAL=33, qty=1;
-var qtyEl=document.getElementById('qty'), totalEl=document.getElementById('total'),
+var qtyEl=document.getElementById('qVal'), totalEl=document.getElementById('total'),
     mintNote=document.getElementById('mintNote');
-function renderTotal(){qtyEl.textContent=qty;totalEl.textContent=(PRICE*qty).toFixed(4)+' BNB';}
-document.getElementById('qMinus').addEventListener('click',function(){if(qty>1){qty--;renderTotal();}});
-document.getElementById('qPlus').addEventListener('click',function(){if(qty<SUPPLY){qty++;renderTotal();}});
-renderTotal();
+var liveMinted=0, liveFreeLeft=FREE_TOTAL, totalMintedCache=null;
+var WARRIORS=['The Tyrant','Triceratops','Palaeo-Sky Glider','Saber-Tooth','Raptor Striker','Long-Neck','Spinosaurus / Sail-Back','Water Beast / Swimmer','Woolly Titan','Bone-Head Charger','Terrible Claw','Prime Avian'];
+function formLabel(f){return f=='base'?t('form.base'):f=='evolved'?t('form.evolved'):f=='archon'?t('form.archon'):t('form.genesis');}
+function tierOf(id){
+  if(id>=481&&id<=500)return t('tier.archon');
+  if(id==501)return t('tier.genesis');
+  var w,form;
+  if(id<=240){w=(id-1)/20|0;form='base';}else{w=(id-241)/20|0;form='evolved';}
+  if(form=='evolved'&&(w==0||w==1))return t('tier.legendary');
+  if(form=='evolved'&&(w==6||w==8))return t('tier.epic');
+  if(form=='base'&&w==2)return t('tier.rare');
+  if(form=='base'&&w==3)return t('tier.uncommon');
+  if(form=='base')return t('tier.common');
+  return '';
+}
+function describeToken(id){
+  if(id>=481&&id<=500)return {name:'The Archon',form:'archon',ed:(id-480)+' / 20'};
+  if(id==501)return {name:'Primordial Genesis',form:'genesis',ed:'1 / 1'};
+  var w,form,ed;
+  if(id<=240){w=(id-1)/20|0;form='base';ed=((id-1)%20+1)+' / 20';}
+  else{w=(id-241)/20|0;form='evolved';ed=((id-241)%20+1)+' / 20';}
+  return {name:WARRIORS[w],form:form,ed:ed};
+}
 var RPCS=['https://bsc-dataseed1.defibit.io/','https://bsc-dataseed.binance.org/','https://bsc-dataseed1.ninicoin.io/'];
 async function rpcCall(method,params){
   for(var i=0;i<RPCS.length;i++){
@@ -517,20 +344,35 @@ async function rpcCall(method,params){
       var c=new AbortController();var to=setTimeout(function(){c.abort();},10000);
       var r=await fetch(RPCS[i],{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({jsonrpc:'2.0',method:method,params:params,id:1}),signal:c.signal});
       clearTimeout(to);var j=await r.json();
-      if(j.result!==undefined&&j.result!==null)return j.result;
+      if(j&&j.result!==undefined&&j.result!==null)return j.result;
     }catch(e){}
   }
   return null;
 }
-var liveStatsEl=document.getElementById('liveStats'),freeLeftEl=document.getElementById('freeLeft'),
-    statNoteEl=document.getElementById('statNote'),freeStateEl=document.getElementById('freeState');
+function renderLive(){
+  var qn=document.getElementById('qVal');if(qn)qn.textContent=qty;
+  var tt=document.getElementById('total');if(tt)tt.textContent=(PRICE*qty).toFixed(4)+' BNB';
+  var sm=document.getElementById('statMinted');if(sm)sm.textContent=liveMinted+' / 501';
+  var ml=document.getElementById('mintedLine');if(ml)ml.textContent=t('mint.line2').replace('{n}',liveMinted).replace('{f}',liveFreeLeft);
+  var fs=document.getElementById('freeState');if(fs)fs.textContent=liveFreeLeft+' / '+FREE_TOTAL;
+}
+function renderTotal(){qtyEl.textContent=qty;totalEl.textContent=(PRICE*qty).toFixed(4)+' BNB';}
+document.getElementById('qMinus').addEventListener('click',function(){if(qty>1){qty--;renderTotal();}});
+document.getElementById('qPlus').addEventListener('click',function(){if(qty<SUPPLY){qty++;renderTotal();}});
+renderTotal();
 async function readLive(){
   var tm=await rpcCall('eth_call',[{to:CONTRACT,data:'0xa2309ff8'},'latest']);
   var fm=await rpcCall('eth_call',[{to:CONTRACT,data:'0xd10a1a2b'},'latest']);
-  if(tm===null){statNoteEl.textContent=t('live.fail');return;}
-  liveStatsEl.textContent=parseInt(tm,16)+'/501';
-  if(fm!==null)freeLeftEl.textContent=Math.max(0,FREE_TOTAL-parseInt(fm,16));
-  statNoteEl.textContent=t('live.note');
+  var mo=await rpcCall('eth_call',[{to:CONTRACT,data:'0x24bbd049'},'latest']);
+  var btn=document.getElementById('mintBtn'),fbtn=document.getElementById('freeBtn'),mn=document.getElementById('mintNote');
+  if(tm===null||fm===null||mo===null){return;}
+  liveMinted=parseInt(tm,16);totalMintedCache=liveMinted;
+  liveFreeLeft=Math.max(0,FREE_TOTAL-parseInt(fm,16));
+  var open=parseInt(mo,16)===1;
+  if(btn){btn.disabled=!open;btn.textContent=open?t('paid.btn'):(lang=='ja'?'ミント終了':lang=='id'?'Mint ditutup':'Mint Closed');}
+  if(fbtn){fbtn.disabled=!open||liveFreeLeft===0;}
+  if(mn)mn.textContent=open?t('mint.note'):(lang=='ja'?'ミントは現在受付していません。':lang=='id'?'Mint sedang tidak dibuka.':'Mint is not open right now.');
+  renderLive();
 }
 readLive();setInterval(readLive,30000);
 async function ensureChain(){
@@ -561,15 +403,40 @@ document.getElementById('freeBtn').addEventListener('click',async function(){
   try{
     var ac=await window.ethereum.request({method:'eth_requestAccounts'});
     var used=await rpcCall('eth_call',[{to:CONTRACT,data:'0x3a602b4d'+ac[0].slice(2).padStart(64,'0')},'latest']);
-    if(used!==null&&parseInt(used,16)>0){freeStateEl.textContent=t('live.freeUsed');mintNote.textContent=t('live.freeUsed');return;}
+    if(used!==null&&parseInt(used,16)>0){mintNote.textContent=t('live.freeUsed');return;}
     var fm=await rpcCall('eth_call',[{to:CONTRACT,data:'0xd10a1a2b'},'latest']);
-    if(fm!==null&&parseInt(fm,16)>=FREE_TOTAL){freeStateEl.textContent=t('live.freeGone');mintNote.textContent=t('live.freeGone');return;}
+    if(fm!==null&&parseInt(fm,16)>=FREE_TOTAL){mintNote.textContent=t('live.freeGone');return;}
     var tx=await sendTx('0x8ab53447','0x0');
-    freeStateEl.textContent=t('live.sent');
     mintNote.textContent=t('live.sent')+' '+tx;
     setTimeout(readLive,15000);
   }catch(e){mintNote.textContent=t('live.err')+' '+(e&&e.message?e.message:e);}
 });
+document.getElementById('checkBtn').addEventListener('click',async function(){
+  var v=parseInt(document.getElementById('checkInput').value,10);
+  var out=document.getElementById('checkOut');
+  if(!v||v<1||v>501){out.textContent=lang=='ja'?'1から501までの数字を入力してください。':lang=='id'?'Masukkan angka 1 sampai 501.':'Enter a number from 1 to 501.';return;}
+  var d=describeToken(v);
+  var tier=tierOf(v);
+  var st='';
+  var owner=await rpcCall('eth_call',[{to:CONTRACT,data:'0x6352211e'+v.toString(16).padStart(64,'0')},'latest']);
+  if(owner!==null){st=lang=='ja'?' · すでにミント済み':lang=='id'?' · sudah ter-mint':' · already minted';}
+  else if(totalMintedCache===0){st=lang=='ja'?' · まだミントされていません':lang=='id'?' · belum ter-mint':' · not minted yet';}
+  else{st=lang=='ja'?' · ミント状況は不明':lang=='id'?' · status mint tidak diketahui':' · mint status unknown';}
+  var tierTxt=tier?(' · '+tier):'';
+  out.innerHTML='<span class="out">#'+v+' — '+d.name+'</span> · '+formLabel(d.form)+' · '+(lang=='ja'?'エディション ':lang=='id'?'Edisi ':'Edition ')+d.ed+tierTxt+st;
+});
+function updateShare(){
+  var a=document.getElementById('sharePost');if(!a)return;
+  a.href='https://twitter.com/intent/tweet?text='+encodeURIComponent(t('share.text'));
+}
+function copyText(txt,btn,key){
+  function done(){var o=btn.textContent;btn.textContent=t(key);setTimeout(function(){btn.textContent=o;},2000);}
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done).catch(function(){});}else{var ta=document.createElement('textarea');ta.value=txt;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');done();}catch(e){}document.body.removeChild(ta);}
+}
+document.getElementById('copyPrompt').addEventListener('click',function(){copyText(document.getElementById('agentPrompt').textContent,this,'mint.copied');});
+document.getElementById('copyContract').addEventListener('click',function(){copyText(CONTRACT,this,'sup.copied');});
+document.getElementById('shareCopy').addEventListener('click',function(){copyText(t('share.text'),this,'share.copied');});
+updateShare();
 </script>
 </body>
 </html>
